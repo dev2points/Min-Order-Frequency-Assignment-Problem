@@ -1,0 +1,45 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		cp_no.py
+[runlim] argv[2]:		scen08
+[runlim] start:			Wed Mar 25 06:10:50 2026
+[runlim] child:			76250
+--- Building model for 916 variables ---
+--- Solving with CP Optimizer (Integer Mode) ---
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Minimization problem - 916 variables, 5744 constraints
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.03s (0.03s extraction + 0.00s propagation)
+ !  . Log search space  : 4834.9 (before), 4834.9 (after)
+ !  . Memory usage      : 2.5 MB (before), 2.5 MB (after)
+ ! Using parallel search with 12 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        916                 -
+ + New bound is 0
+ ! ----------------------------------------------------------------------------
+ ! Search completed, model has no solution.
+ ! Best bound             : 0
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 0
+ ! Number of fails        : 0
+ ! Total memory usage     : 13.1 MB (12.5 MB CP Optimizer + 0.6 MB Concert)
+ ! Time spent in solve    : 0.04s (0.01s engine + 0.03s extraction)
+ ! ----------------------------------------------------------------------------
+No valid solution: Infeasible
+Total time: 0.20s
+Memory used: 31.93 MB
+[runlim] end:			Wed Mar 25 06:10:50 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		2
+[runlim] processes:		3
+[runlim] real:			0.28 seconds
+[runlim] time:			0.19 seconds
+[runlim] space:			49 MB
+[runlim] load:			8.65 maximum
+[runlim] samples:		3

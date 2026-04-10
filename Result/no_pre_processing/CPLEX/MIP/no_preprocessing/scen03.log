@@ -1,0 +1,142 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		mip_no.py
+[runlim] argv[3]:		scen03
+[runlim] start:			Wed Mar 25 02:02:29 2026
+[runlim] child:			67751
+--- Building MIP model for 400 variables ---
+--- Solving with CPLEX MIP ---
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+Legacy callback                                  i
+Tried aggregator 2 times.
+MIP Presolve eliminated 348434 rows and 0 columns.
+MIP Presolve modified 48227 coefficients.
+Aggregator did 1 substitutions.
+Reduced MIP has 56798 rows, 15939 columns, and 474116 nonzeros.
+Reduced MIP has 15939 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.57 sec. (1607.25 ticks)
+Found incumbent of value 48.000000 after 2.32 sec. (2531.24 ticks)
+Probing changed sense of 7946 constraints.
+Probing time = 0.08 sec. (21.89 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 21805 rows and 7962 columns.
+MIP Presolve modified 25671 coefficients.
+Reduced MIP has 34993 rows, 7977 columns, and 399253 nonzeros.
+Reduced MIP has 7977 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.69 sec. (1673.85 ticks)
+Probing time = 0.02 sec. (4.10 ticks)
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 1 rows and 0 columns.
+Aggregator did 2 substitutions.
+Reduced MIP has 34990 rows, 7974 columns, and 399247 nonzeros.
+Reduced MIP has 7974 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.52 sec. (548.03 ticks)
+Probing time = 0.02 sec. (4.11 ticks)
+Clique table members: 34989.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+[runlim] sample:		29.06 time, 10.01 real, 476 MB, 8.55 load
+Root relaxation solution time = 4.66 sec. (1907.19 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           48.0000        0.0000           100.00%
+*     0+    0                           20.0000        0.0000           100.00%
+*     0+    0                           18.0000        0.0000           100.00%
+      0     0       12.0000  1532       18.0000       12.0000       21   33.33%
+
+Num labels used: 18
+Current incumbent solution: {16, 30, 58, 100, 142, 254, 268, 296, 338, 380, 414, 456, 484, 554, 652, 694, 722, 792}}
+Time taken: 11.12s
+
+Num labels used: 18
+Current incumbent solution: {16, 30, 58, 100, 142, 254, 268, 296, 338, 380, 414, 456, 484, 554, 652, 694, 722, 792}}
+Time taken: 11.12s
+[runlim] sample:		49.69 time, 20.01 real, 516 MB, 7.54 load
+[runlim] sample:		69.69 time, 30.01 real, 525 MB, 6.69 load
+[runlim] sample:		89.67 time, 40.01 real, 527 MB, 5.97 load
+[runlim] sample:		109.66 time, 50.01 real, 527 MB, 5.36 load
+[runlim] sample:		129.66 time, 60.01 real, 527 MB, 4.84 load
+[runlim] sample:		149.66 time, 70.01 real, 527 MB, 4.40 load
+[runlim] sample:		169.65 time, 80.01 real, 527 MB, 4.03 load
+[runlim] sample:		189.65 time, 90.01 real, 527 MB, 3.72 load
+[runlim] sample:		209.64 time, 100.01 real, 527 MB, 3.46 load
+[runlim] sample:		229.64 time, 110.01 real, 527 MB, 3.31 load
+[runlim] sample:		249.64 time, 120.01 real, 527 MB, 3.10 load
+[runlim] sample:		269.64 time, 130.01 real, 527 MB, 2.93 load
+[runlim] sample:		289.63 time, 140.01 real, 527 MB, 2.79 load
+[runlim] sample:		309.63 time, 150.01 real, 527 MB, 2.67 load
+[runlim] sample:		329.63 time, 160.01 real, 527 MB, 2.56 load
+[runlim] sample:		349.62 time, 170.01 real, 527 MB, 2.48 load
+[runlim] sample:		369.62 time, 180.01 real, 527 MB, 2.40 load
+[runlim] sample:		389.62 time, 190.01 real, 527 MB, 2.34 load
+[runlim] sample:		409.62 time, 200.01 real, 527 MB, 2.29 load
+[runlim] sample:		429.61 time, 210.01 real, 527 MB, 2.24 load
+[runlim] sample:		449.61 time, 220.01 real, 527 MB, 2.21 load
+[runlim] sample:		469.61 time, 230.01 real, 527 MB, 2.17 load
+[runlim] sample:		489.60 time, 240.01 real, 527 MB, 2.15 load
+[runlim] sample:		509.60 time, 250.01 real, 527 MB, 2.12 load
+[runlim] sample:		529.60 time, 260.01 real, 527 MB, 2.10 load
+[runlim] sample:		549.60 time, 270.01 real, 527 MB, 2.09 load
+[runlim] sample:		569.59 time, 280.01 real, 527 MB, 2.15 load
+
+Num labels used: 18
+Current incumbent solution: {16, 30, 58, 100, 142, 254, 268, 296, 338, 380, 414, 456, 484, 554, 652, 694, 722, 792}}
+Time taken: 283.47s
+      0     0       12.0000  1221       18.0000     Cuts: 306   104736   33.33%
+
+Num labels used: 18
+Current incumbent solution: {16, 30, 58, 100, 142, 254, 268, 296, 338, 380, 414, 456, 484, 554, 652, 694, 722, 792}}
+Time taken: 283.48s
+[runlim] sample:		589.59 time, 290.01 real, 545 MB, 2.28 load
+[runlim] sample:		609.59 time, 300.01 real, 546 MB, 2.23 load
+[runlim] sample:		629.58 time, 310.01 real, 548 MB, 2.20 load
+[runlim] sample:		649.58 time, 320.01 real, 548 MB, 2.17 load
+[runlim] sample:		669.57 time, 330.01 real, 548 MB, 2.14 load
+[runlim] sample:		689.57 time, 340.01 real, 548 MB, 2.12 load
+[runlim] sample:		709.57 time, 350.01 real, 548 MB, 2.10 load
+[runlim] sample:		729.57 time, 360.01 real, 548 MB, 2.08 load
+[runlim] sample:		749.56 time, 370.01 real, 548 MB, 2.07 load
+[runlim] sample:		769.56 time, 380.01 real, 548 MB, 2.06 load
+[runlim] sample:		789.55 time, 390.01 real, 548 MB, 2.05 load
+[runlim] sample:		809.55 time, 400.01 real, 548 MB, 2.04 load
+[runlim] sample:		829.54 time, 410.01 real, 548 MB, 2.04 load
+[runlim] sample:		849.54 time, 420.01 real, 548 MB, 2.03 load
+[runlim] sample:		869.54 time, 430.01 real, 548 MB, 2.02 load
+[runlim] sample:		889.53 time, 440.01 real, 548 MB, 2.02 load
+[runlim] sample:		909.53 time, 450.01 real, 548 MB, 2.02 load
+[runlim] sample:		929.53 time, 460.01 real, 548 MB, 2.01 load
+[runlim] sample:		949.52 time, 470.01 real, 548 MB, 2.01 load
+[runlim] sample:		969.52 time, 480.01 real, 548 MB, 2.01 load
+[runlim] sample:		989.51 time, 490.01 real, 548 MB, 2.01 load
+[runlim] sample:		1009.51 time, 500.01 real, 548 MB, 2.01 load
+[runlim] sample:		1029.51 time, 510.01 real, 548 MB, 2.00 load
+[runlim] sample:		1049.50 time, 520.01 real, 548 MB, 2.00 load
+[runlim] sample:		1069.50 time, 530.01 real, 548 MB, 2.00 load
+[runlim] sample:		1089.50 time, 540.01 real, 548 MB, 2.00 load
+[runlim] sample:		1109.49 time, 550.01 real, 548 MB, 2.00 load
+[runlim] sample:		1129.49 time, 560.01 real, 548 MB, 2.00 load
+[runlim] sample:		1149.48 time, 570.01 real, 548 MB, 2.00 load
+[runlim] sample:		1169.48 time, 580.01 real, 548 MB, 2.00 load
+[runlim] sample:		1189.48 time, 590.01 real, 548 MB, 2.00 load
+[runlim] sample:		1209.47 time, 600.01 real, 548 MB, 2.00 load
+[runlim] end:			Wed Mar 25 02:12:30 2026
+[runlim] status:		out of time
+[runlim] result:		2
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			601.06 seconds
+[runlim] time:			1209.47 seconds
+[runlim] space:			548 MB
+[runlim] load:			9.55 maximum
+[runlim] samples:		6000

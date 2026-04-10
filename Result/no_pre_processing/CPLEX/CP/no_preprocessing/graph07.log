@@ -1,0 +1,86 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		cp_no.py
+[runlim] argv[2]:		graph07
+[runlim] start:			Wed Mar 25 06:00:47 2026
+[runlim] child:			70715
+--- Building model for 400 variables ---
+--- Solving with CP Optimizer (Integer Mode) ---
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:497:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_3 - node_29) > 51
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:498:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_3 - node_53) > 207
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:508:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_5 - node_32) > 244
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:510:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_5 - node_42) > 284
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:514:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_6 - node_27) > 250
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:521:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_7 - node_204) > 215
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:523:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_7 - node_215) > 54
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:524:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_7 - node_273) > 177
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:526:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_8 - node_274) > 178
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:533:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_9 - node_17) > 226
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:535:23): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_9 - node_21) > 263
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:538:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_10 - node_22) > 186
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:542:25): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_10 - node_145) > 243
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:566:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_15 - node_33) > 111
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:571:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_16 - node_33) > 272
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:574:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_16 - node_64) > 224
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:583:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_17 - node_49) > 185
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:584:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_17 - node_50) > 298
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:585:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_17 - node_54) > 266
+/home/ap/Desktop/Minimum-Order-Frequency-Assignment-Problem/CPLEX/CP/cp_no.py:81(stream:591:24): Warning: The constraint is always false, the model is infeasible.
+                                                                                                            abs(node_18 - node_32) > 212
+   Too many warnings of this type. Suppressing further warnings of this type.
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Minimization problem - 400 variables, 2170 constraints
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 489.3 (before), 489.3 (after)
+ !  . Memory usage      : 520.9 kB (before), 520.9 kB (after)
+ ! Using parallel search with 12 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        400                 -
+ + New bound is 0
+ ! ----------------------------------------------------------------------------
+ ! Search completed, model has no solution.
+ ! Best bound             : 0
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 0
+ ! Number of fails        : 0
+ ! Total memory usage     : 3.8 MB (3.7 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 0.00s (0.00s engine + 0.00s extraction)
+ ! ----------------------------------------------------------------------------
+No valid solution: Infeasible
+Total time: 0.07s
+Memory used: 27.13 MB
+[runlim] end:			Wed Mar 25 06:00:47 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		2
+[runlim] processes:		3
+[runlim] real:			0.15 seconds
+[runlim] time:			0.10 seconds
+[runlim] space:			44 MB
+[runlim] load:			8.01 maximum
+[runlim] samples:		2

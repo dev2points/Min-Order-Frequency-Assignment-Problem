@@ -1,0 +1,43 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		mip_no.py
+[runlim] argv[3]:		graph12
+[runlim] start:			Wed Mar 25 02:52:58 2026
+[runlim] child:			68083
+--- Building MIP model for 680 variables ---
+--- Solving with CPLEX MIP ---
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+Legacy callback                                  i
+Infeasibility row 'c3':  0  = 1.
+Presolve time = 0.02 sec. (20.24 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.03 sec. (36.65 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.03 sec. (36.65 ticks)
+CPLEX Error  1217: No solution exists.
+No solution found or the problem is infeasible.
+Total time: 0.64s
+Memory used: 49.27 MB
+==============================
+[runlim] end:			Wed Mar 25 02:52:59 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.69 seconds
+[runlim] time:			0.60 seconds
+[runlim] space:			90 MB
+[runlim] load:			2.99 maximum
+[runlim] samples:		7

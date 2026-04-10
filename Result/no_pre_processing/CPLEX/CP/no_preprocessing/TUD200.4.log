@@ -1,0 +1,58 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		cp_no.py
+[runlim] argv[2]:		TUD200.4
+[runlim] start:			Wed Mar 25 06:30:52 2026
+[runlim] child:			76424
+--- Building model for 200 variables ---
+--- Solving with CP Optimizer (Integer Mode) ---
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Minimization problem - 200 variables, 1142 constraints
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 161.3 (before), 161.3 (after)
+ !  . Memory usage      : 800.1 kB (before), 800.1 kB (after)
+ ! Using parallel search with 12 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        200                 -
+ + New bound is 0
+                        0         50                 -
+ + New bound is 19
+                        0         50    1            -
+ + New bound is 20
+ *            20        3  0.04s        1      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 20 (optimal - effective tol. is 0)
+ ! Best bound             : 20
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 4523
+ ! Number of fails        : 1997
+ ! Total memory usage     : 14.5 MB (14.3 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 0.04s (0.03s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 226150.0
+ ! ----------------------------------------------------------------------------
+
+==============================
+OPTIMAL SOLUTION:
+Label list: [86, 324, 86, 324, 86, 324, 156, 394, 128, 366, 652, 414, 86, 324, 114, 352, 156, 394, 100, 338, 156, 394, 86, 324, 100, 338, 652, 414, 170, 408, 128, 366, 72, 310, 156, 394, 128, 366, 100, 338, 114, 352, 652, 414, 170, 408, 72, 310, 652, 414, 100, 338, 142, 380, 86, 324, 156, 394, 170, 408, 114, 352, 652, 414, 240, 478, 100, 338, 128, 366, 652, 414, 142, 380, 72, 310, 128, 366, 72, 310, 128, 366, 72, 310, 170, 408, 128, 366, 652, 414, 170, 408, 240, 478, 156, 394, 652, 414, 114, 352, 72, 310, 652, 414, 72, 310, 156, 394, 652, 414, 170, 408, 72, 310, 100, 338, 72, 310, 100, 338, 72, 310, 86, 324, 72, 310, 128, 366, 72, 310, 652, 414, 652, 414, 170, 408, 86, 324, 128, 366, 156, 394, 652, 414, 240, 478, 72, 310, 114, 352, 652, 414, 86, 324, 114, 352, 114, 352, 86, 324, 72, 310, 86, 324, 652, 414, 652, 414, 240, 478, 240, 478, 100, 338, 72, 310, 86, 324, 86, 324, 142, 380, 142, 380, 72, 310, 240, 478, 240, 478, 156, 394, 170, 408, 170, 408, 156, 394, 72, 310]
+Number of labels used: 20
+Specific labels: [72, 86, 100, 114, 128, 142, 156, 170, 240, 310, 324, 338, 352, 366, 380, 394, 408, 414, 478, 652]
+==============================
+Total time: 0.08s
+Memory used: 25.65 MB
+[runlim] end:			Wed Mar 25 06:30:53 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		2
+[runlim] processes:		3
+[runlim] real:			0.15 seconds
+[runlim] time:			0.12 seconds
+[runlim] space:			57 MB
+[runlim] load:			6.86 maximum
+[runlim] samples:		2

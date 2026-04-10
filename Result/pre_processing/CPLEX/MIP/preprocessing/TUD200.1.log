@@ -1,0 +1,93 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		mip.py
+[runlim] argv[3]:		TUD200.1
+[runlim] start:			Thu Mar 26 06:25:24 2026
+[runlim] child:			32837
+--- Building MIP model for 200 variables ---
+--- Solving with CPLEX MIP ---
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+Legacy callback                                  i
+Tried aggregator 1 time.
+MIP Presolve eliminated 158548 rows and 0 columns.
+MIP Presolve modified 23853 coefficients.
+Reduced MIP has 28059 rows, 8034 columns, and 222207 nonzeros.
+Reduced MIP has 8034 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.56 sec. (574.84 ticks)
+Probing fixed 4 vars, tightened 0 bounds.
+Probing changed sense of 3993 constraints.
+Probing time = 0.04 sec. (14.29 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 10397 rows and 3995 columns.
+MIP Presolve modified 15207 coefficients.
+Reduced MIP has 17662 rows, 4039 columns, and 237341 nonzeros.
+Reduced MIP has 4039 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.68 sec. (923.86 ticks)
+Probing time = 0.01 sec. (2.98 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 2 rows and 0 columns.
+Reduced MIP has 17660 rows, 4037 columns, and 237335 nonzeros.
+Reduced MIP has 4037 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.20 sec. (267.07 ticks)
+Probing time = 0.02 sec. (3.06 ticks)
+Clique table members: 19755.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 2.42 sec. (1672.94 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           20.0000        0.0000           100.00%
+*     0+    0                           18.0000        0.0000           100.00%
+*     0+    0                           16.0000        0.0000           100.00%
+*     0+    0                           14.0000        0.0000           100.00%
+      0     0       12.0000   764       14.0000       12.0000       17   14.29%
+
+Num labels used: 14
+Current incumbent solution: {16, 58, 100, 142, 254, 296, 338, 380, 428, 498, 554, 666, 736, 792}}
+Time taken: 5.24s
+
+Num labels used: 14
+Current incumbent solution: {16, 58, 100, 142, 254, 296, 338, 380, 428, 498, 554, 666, 736, 792}}
+Time taken: 5.73s
+[runlim] sample:		26.13 time, 10.01 real, 305 MB, 2.77 load
+*     0+    0                           12.0000       12.0000             0.00%
+      0     0        cutoff             12.0000       12.0000       17    0.00%
+Elapsed time = 11.48 sec. (12283.61 ticks, tree = 0.01 MB, solutions = 5)
+
+Root node processing (before b&c):
+  Real time             =   11.48 sec. (12284.14 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   11.48 sec. (12284.14 ticks)
+
+==============================
+FINAL INCUMBENT SOLUTION:
+{694, 456, 792, 554, 268, 30, 722, 484, 380, 142, 792, 554, 268, 30, 142, 380, 380, 142, 792, 554, 380, 142, 554, 792, 554, 792, 86, 324, 86, 324, 792, 554, 694, 456, 554, 792, 456, 694, 86, 324, 456, 694, 792, 554, 694, 456, 792, 554, 456, 694, 142, 380, 30, 268, 30, 268, 484, 722, 456, 694, 142, 380, 792, 554, 722, 484, 792, 554, 324, 86, 268, 30, 142, 380, 456, 694, 324, 86, 86, 324, 268, 30, 722, 484, 554, 792, 722, 484, 86, 324, 142, 380, 694, 456, 484, 722, 268, 30, 792, 554, 268, 30, 722, 484, 86, 324, 694, 456, 722, 484, 268, 30, 142, 380, 30, 268, 380, 142, 792, 554, 694, 456, 554, 792, 142, 380, 484, 722, 142, 380, 142, 380, 324, 86, 456, 694, 722, 484, 30, 268, 324, 86, 268, 30, 792, 554, 268, 30, 554, 792, 86, 324, 142, 380, 722, 484, 86, 324, 30, 268, 722, 484, 380, 142, 30, 268, 694, 456, 456, 694, 86, 324, 694, 456, 722, 484, 142, 380, 30, 268, 792, 554, 792, 554, 86, 324, 86, 324, 554, 792, 694, 456, 86, 324, 380, 142, 30, 268, 484, 722}
+Number of labels used: 12
+Total time: 12.34s
+Memory used: 285.18 MB
+==============================
+[runlim] end:			Thu Mar 26 06:25:37 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			12.41 seconds
+[runlim] time:			30.73 seconds
+[runlim] space:			310 MB
+[runlim] load:			3.00 maximum
+[runlim] samples:		124

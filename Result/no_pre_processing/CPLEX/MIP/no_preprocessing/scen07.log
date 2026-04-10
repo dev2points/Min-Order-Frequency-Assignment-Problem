@@ -1,0 +1,50 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		mip_no.py
+[runlim] argv[3]:		scen07
+[runlim] start:			Wed Mar 25 02:53:46 2026
+[runlim] child:			68154
+--- Building MIP model for 400 variables ---
+--- Solving with CPLEX MIP ---
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+Legacy callback                                  i
+Tried aggregator 1 time.
+[runlim] sample:		15.17 time, 10.01 real, 613 MB, 2.27 load
+[runlim] sample:		42.10 time, 20.01 real, 649 MB, 2.30 load
+Presolve has eliminated 1652091 rows and 4216 columns...
+MIP Presolve eliminated 1652091 rows and 4216 columns.
+MIP Presolve modified 382386 coefficients.
+Reduced MIP has 55199 rows, 11780 columns, and 986016 nonzeros.
+Reduced MIP has 11780 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 22.53 sec. (36805.68 ticks)
+
+Root node processing (before b&c):
+  Real time             =   23.70 sec. (38629.02 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   23.70 sec. (38629.02 ticks)
+CPLEX Error  1217: No solution exists.
+No solution found or the problem is infeasible.
+Total time: 29.83s
+Memory used: 369.13 MB
+==============================
+[runlim] end:			Wed Mar 25 02:54:16 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			29.90 seconds
+[runlim] time:			52.44 seconds
+[runlim] space:			815 MB
+[runlim] load:			2.32 maximum
+[runlim] samples:		299

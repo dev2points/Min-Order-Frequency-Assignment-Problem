@@ -1,0 +1,49 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		mip.py
+[runlim] argv[3]:		TUD200.2
+[runlim] start:			Thu Mar 26 06:25:37 2026
+[runlim] child:			32853
+--- Building MIP model for 200 variables ---
+--- Solving with CPLEX MIP ---
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+Legacy callback                                  i
+Found incumbent of value 46.000000 after 0.00 sec. (0.02 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 500 rows and 246 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.19 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.21 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.21 ticks)
+
+==============================
+FINAL INCUMBENT SOLUTION:
+{708, 470, 778, 540, 16, 254, 16, 254, 30, 268, 86, 324, 680, 442, 16, 254, 240, 478, 114, 352, 156, 394, 708, 470, 16, 254, 16, 254, 722, 484, 764, 526, 792, 554, 16, 254, 680, 442, 722, 484, 16, 254, 652, 414, 666, 428, 16, 254, 114, 352, 736, 498, 240, 478, 708, 470, 652, 414, 694, 456, 16, 254, 170, 408, 750, 512, 792, 554, 86, 324, 44, 282, 652, 414, 128, 366, 652, 414, 680, 442, 792, 554, 792, 554, 128, 366, 16, 254, 128, 366, 764, 526, 792, 554, 750, 512, 142, 380, 722, 484, 114, 352, 16, 254, 156, 394, 764, 526, 30, 268, 792, 554, 708, 470, 652, 414, 778, 540, 170, 408, 16, 254, 708, 470, 792, 554, 16, 254, 792, 554, 44, 282, 792, 554, 16, 254, 156, 394, 30, 268, 156, 394, 778, 540, 86, 324, 750, 512, 652, 414, 666, 428, 30, 268, 792, 554, 680, 442, 792, 554, 142, 380, 16, 254, 86, 324, 792, 554, 16, 254, 666, 428, 666, 428, 792, 554, 722, 484, 652, 414, 58, 296, 792, 554, 792, 554, 86, 324, 72, 310, 142, 380, 792, 554, 680, 442, 16, 254, 792, 554}
+Number of labels used: 46
+Total time: 0.09s
+Memory used: 26.23 MB
+==============================
+[runlim] end:			Thu Mar 26 06:25:37 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.14 seconds
+[runlim] time:			0.10 seconds
+[runlim] space:			19 MB
+[runlim] load:			2.71 maximum
+[runlim] samples:		2

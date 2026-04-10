@@ -1,0 +1,28 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main.py
+[runlim] argv[3]:		scen07
+[runlim] argv[4]:		nsc
+[runlim] argv[5]:		assumptions
+[runlim] argv[6]:		cadical195
+[runlim] start:			Wed Mar 25 21:11:10 2026
+[runlim] child:			21785
+Warning: variable 302 has no valid labels after preprocessing.
+Cannot find solution!
+Time taken: 0.19 seconds
+Memory used: 18.38 MB
+[runlim] end:			Wed Mar 25 21:11:10 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.23 seconds
+[runlim] time:			0.20 seconds
+[runlim] space:			18 MB
+[runlim] load:			1.02 maximum
+[runlim] samples:		3

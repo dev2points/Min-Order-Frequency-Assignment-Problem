@@ -1,0 +1,81 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		cp_no.py
+[runlim] argv[2]:		graph03
+[runlim] start:			Wed Mar 25 05:54:16 2026
+[runlim] child:			70598
+--- Building model for 200 variables ---
+--- Solving with CP Optimizer (Integer Mode) ---
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Minimization problem - 200 variables, 1134 constraints
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 1044.6 (before), 1044.6 (after)
+ !  . Memory usage      : 806.1 kB (before), 806.1 kB (after)
+ ! Using parallel search with 12 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        200                 -
+ + New bound is 0
+                        0        200                 -
+ + New bound is 2
+                       10        200    1   F   408 != node_96
+ + New bound is 3
+ *            36      103  0.05s        1      (gap is 91.67%)
+ *            28      100  0.05s        2      (gap is 89.29%)
+ *            22     1953  0.12s       10      (gap is 86.36%)
+ *            20     5914  0.30s        4      (gap is 85.00%)
+              20     5460        188    2   F   778 != node_29
+ + New bound is 13 (gap is 35.00%)
+[runlim] sample:		83.26 time, 10.01 real, 103 MB, 9.24 load
+[runlim] sample:		171.95 time, 20.01 real, 106 MB, 9.51 load
+[runlim] sample:		260.23 time, 30.02 real, 108 MB, 9.00 load
+[runlim] sample:		350.68 time, 40.01 real, 110 MB, 9.31 load
+[runlim] sample:		438.89 time, 50.01 real, 112 MB, 8.84 load
+[runlim] sample:		526.25 time, 60.02 real, 114 MB, 9.40 load
+[runlim] sample:		614.99 time, 70.01 real, 115 MB, 8.99 load
+[runlim] sample:		705.66 time, 80.01 real, 117 MB, 9.21 load
+[runlim] sample:		796.19 time, 90.01 real, 118 MB, 9.64 load
+              20    1983k        134   11   F   526 != node_34
+ + New bound is 14 (gap is 30.00%)
+[runlim] sample:		884.69 time, 100.02 real, 120 MB, 10.01 load
+              20    2004k        168    9   F    16 != node_39
+ + New bound is 15 (gap is 25.00%)
+[runlim] sample:		973.94 time, 110.02 real, 121 MB, 9.92 load
+[runlim] sample:		1062.51 time, 120.01 real, 122 MB, 9.76 load
+              20    2384k        168    2            -
+ + New bound is 20 (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 4 solutions found.
+ ! Best objective         : 20 (optimal - effective tol. is 0)
+ ! Best bound             : 20
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 26953331
+ ! Number of fails        : 13479705
+ ! Total memory usage     : 50.3 MB (50.1 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 119.97s (119.97s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 224667.3
+ ! ----------------------------------------------------------------------------
+
+==============================
+OPTIMAL SOLUTION:
+Label list: [100, 338, 142, 380, 142, 380, 142, 380, 142, 380, 142, 380, 58, 296, 114, 352, 114, 352, 58, 296, 16, 254, 86, 324, 100, 338, 100, 338, 114, 352, 128, 366, 44, 282, 142, 380, 72, 310, 16, 254, 16, 254, 86, 324, 58, 296, 86, 324, 30, 268, 128, 366, 142, 380, 44, 282, 86, 324, 114, 352, 86, 324, 16, 254, 58, 296, 100, 338, 30, 268, 142, 380, 142, 380, 58, 296, 44, 282, 16, 254, 86, 324, 30, 268, 16, 254, 16, 254, 72, 310, 16, 254, 30, 268, 142, 380, 30, 268, 44, 282, 16, 254, 142, 380, 86, 324, 100, 338, 142, 380, 16, 254, 16, 254, 58, 296, 142, 380, 44, 282, 114, 352, 16, 254, 142, 380, 72, 310, 114, 352, 142, 380, 72, 310, 142, 380, 114, 352, 86, 324, 100, 338, 58, 296, 30, 268, 72, 310, 128, 366, 44, 282, 16, 254, 86, 324, 16, 254, 58, 296, 72, 310, 114, 352, 86, 324, 16, 254, 128, 366, 128, 366, 44, 282, 100, 338, 44, 282, 72, 310, 114, 352, 86, 324, 142, 380, 58, 296, 30, 268, 16, 254, 58, 296, 44, 282, 128, 366, 30, 268]
+Number of labels used: 20
+Specific labels: [16, 30, 44, 58, 72, 86, 100, 114, 128, 142, 254, 268, 282, 296, 310, 324, 338, 352, 366, 380]
+==============================
+Total time: 120.02s
+Memory used: 25.70 MB
+[runlim] end:			Wed Mar 25 05:56:16 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		2
+[runlim] processes:		3
+[runlim] real:			120.09 seconds
+[runlim] time:			1062.51 seconds
+[runlim] space:			122 MB
+[runlim] load:			10.09 maximum
+[runlim] samples:		1201
