@@ -252,118 +252,6 @@ def amk_nsc(solver, lits, K):
     return rhs
 
 
-def amk_nsc_reduced(solver, lits, K):
-    if isinstance(lits, dict):
-        lits = list(lits.values())
-
-    n = len(lits)
-    top = solver.nof_vars()
-
-    # r[i][j] với i = 1..n, j = 1..K
-    r = [[0] * (K + 1) for _ in range(n + 1)]
-
-    # tạo biến phụ
-    for i in range(1, K):
-        for j in range(1, i + 1):
-            top += 1
-            r[i][j] = top
-    for i in range(K, n + 1):
-        for j in range(1, K + 1):
-            top += 1
-            r[i][j] = top
-
-    # (1)  ¬x_i ∨ r(i,1)
-    for i in range(1, n + 1):
-        solver.add_clause([-lits[i - 1], r[i][1]])
-
-    # (2)  ¬r(i-1,j) ∨ r(i,j)
-    for i in range(2, n + 1):
-        for j in range(1, min(i - 1, K) + 1):
-            solver.add_clause([-r[i - 1][j], r[i][j]])
-
-    # (3)  ¬x_i ∨ ¬r(i-1,j-1) ∨ r(i,j)
-    for i in range(2, n + 1):
-        for j in range(2, min(i, K) + 1):
-            solver.add_clause([-lits[i - 1], -r[i - 1][j - 1], r[i][j]])
-
-    # (8)  ¬x_i ∨ ¬r(i-1,K)
-    for i in range(K + 1, n + 1):
-        solver.add_clause([-lits[i - 1], -r[i - 1][K]])
-
-    # rhs[j-1] ⇔ sum(lits) ≤ j
-    rhs = [r[n][j] for j in range(1, K + 1)]
-    return rhs
-
-def amk_sc(solver, lits, K):
-    if isinstance(lits, dict):
-        lits = list(lits.values())
-    n = len(lits)
-    top = solver.nof_vars()
-
-    # s[i][j] : i in [0..n-1], j in [0..K-1]
-    s = [[0] * (K + 1) for _ in range(n + 1)]
-
-    # tạo biến phụ
-    for i in range(1, n + 1):
-        for j in range(1, K + 1):
-            top += 1
-            s[i][j] = top    
-
-    solver.add_clause([-lits[0], s[1][1]])  # (1)   
-    for j in range(2, K + 1):
-        solver.add_clause([-s[1][j]])       # (2)
-
-    for i in range(2, n + 1):
-        solver.add_clause([-lits[i - 1], s[i][1]])  # (3)
-        solver.add_clause([-s[i - 1][1], s[i][1]])      # (4)
-        for j in range(2, K + 1):
-            solver.add_clause([-lits[i - 1], -s[i - 1][j - 1], s[i][j]])  # (5)
-            solver.add_clause([-s[i - 1][j], s[i][j]])  # (6)
-        solver.add_clause([-lits[i - 1], -s[i - 1][K]])  # (7)
-    
-
-    rhs = [s[n][j] for j in range(1, K + 1)]
-
-    return rhs
-
-def amk_sc_reduced(solver, lits, K):
-    if isinstance(lits, dict):
-        lits = list(lits.values())
-    
-    n = len(lits)
-    top = solver.nof_vars()
-
-    # s[i][j] : i in [0..n-1], j in [0..K-1]
-    s = [[0] * K for _ in range(n)]
-
-    # tạo biến phụ
-    for i in range(n):
-        for j in range(K):
-            top += 1
-            s[i][j] = top
-
-    # (1) ¬x_i ∨ s[i][0]
-    for i in range(n):
-        solver.add_clause([-lits[i], s[i][0]])
-
-    # (2) ¬s[i-1][j] ∨ s[i][j]
-    for i in range(1, n):
-        for j in range(K):
-            solver.add_clause([-s[i-1][j], s[i][j]])
-
-    # (3) ¬x_i ∨ ¬s[i-1][j-1] ∨ s[i][j]
-    for i in range(1, n):
-        for j in range(1, K):
-            solver.add_clause([-lits[i], -s[i-1][j-1], s[i][j]])
-
-    # (4) ¬x_i ∨ ¬s[i-1][K-1]
-    for i in range(1, n):
-        solver.add_clause([-lits[i], -s[i-1][K-1]])
-
-    # rhs[j-1] <=> sum(lits) <= j
-    rhs = [s[n-1][j] for j in range(K)]
-
-    return rhs
 
 def amk_tot(solver, lits, K):
     if isinstance(lits, dict):
@@ -380,12 +268,6 @@ def amk_tot(solver, lits, K):
 def add_limit_label_constraints(solver, lits, K, strategy):
     if strategy == 'nsc':
         return amk_nsc(solver, lits, K)
-    elif strategy == 'sc':
-        return amk_sc(solver, lits, K)
-    elif strategy == 'sc_reduced':
-        return amk_sc_reduced(solver, lits, K)
-    elif strategy == 'nsc_reduced':
-        return amk_nsc_reduced(solver, lits, K)
     elif strategy == 'tot':
         return amk_tot(solver, lits, K)
 

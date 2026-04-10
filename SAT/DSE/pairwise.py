@@ -208,16 +208,6 @@ def add_limit_label_constraints(solver, lits, K):
     rhs = [r[n][j] for j in range(1, K + 1)]
     return rhs
 
-    # if isinstance(lits, dict):
-    #     lits = list(lits.values())
-    
-    # top = solver.nof_vars()
-    # tot = ITotalizer(lits=lits, ubound=K, top_id=top)
-
-    # for c in tot.cnf.clauses:
-    #     solver.add_clause(c)
-
-    # return tot.rhs
 
 def delete_invalid_labels(var, ctr_file):
     # Read constraints and remove invalid labels from domain
@@ -356,7 +346,7 @@ def main():
     lable_var_map = create_label_var_map(domain[0], solver.nof_vars() + 1)
     build_label_constraints(solver, var_map, lable_var_map)
 
-    # x_vars = add_limit_label_constraints(solver, lable_var_map,num_lables)
+
 
     x_vars = add_limit_label_constraints(solver, lable_var_map,num_lables - 1)
     print("--------------------------------------------------")
