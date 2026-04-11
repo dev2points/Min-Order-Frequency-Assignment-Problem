@@ -96,6 +96,7 @@ python3 mip.py graph01
 ```
 
 ### SAT DSE
+####    DSE+INCSC
 
 ```bash
 cd SAT/DSE
@@ -106,7 +107,14 @@ python3 pairwise.py graph01 assumptions
 
 ```bash
 cd SAT/POSE
+```
+#### POSE+INCSC
+```bash
 python3 main.py graph01 nsc assumptions cadical195
+```
+#### POSE+INC
+```bash
+python3 main.py graph01 tot assumptions cadical195
 ```
 
 Arguments for `SAT/POSE/main.py`:
@@ -117,7 +125,7 @@ Arguments for `SAT/POSE/main.py`:
 
 ## 7. Run Full Experiments
 
-Each module has `auto.sh` for batch runs over all instances.
+Each module has `auto.sh` for batch runs over all instances with and without preprocessing.
 
 ### Gurobi
 
@@ -158,8 +166,8 @@ cd SAT/POSE
 - `tot_assumptions_no_preprocessing.sh`
 
 ## 8. Datasets
-
-Each solver folder has its own `dataset/` directory.
+Dataset can be found in the `dataset/`  or
+each solver folder has its own `dataset/` directory.
 
 Supported instance names include:
 
