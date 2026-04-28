@@ -117,7 +117,7 @@ ax.set_xlim((0, 36))
 # TÙY CHỈNH TIÊU ĐỀ VÀ NHÃN TRỤC CHÍNH XÁC TỪNG CHỮ
 ax.set_xlabel('Number of Solved Instances (OPT/INF before timeout)', fontweight='bold')
 ax.set_ylabel('Time (s)', fontweight='bold')
-ax.set_title('Time comparison between POSE+INCSC and Commercial Solvers', fontweight='bold', pad=15)
+# ax.set_title('Time comparison between POSE+INCSC and Commercial Solvers', fontweight='bold', pad=15)
 
 # Vẽ vạch Timeout ngang
 ax.axhline(y=TIMEOUT_VALUE, color='gray', linestyle='-', alpha=0.5)

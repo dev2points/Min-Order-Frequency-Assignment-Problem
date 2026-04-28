@@ -144,7 +144,7 @@ ax.set_ylim((0.005, 1200))
 # Nhãn và tiêu đề
 ax.set_xlabel('Time of DSE+INCSC (s)', fontweight='bold')
 ax.set_ylabel('Time of POSE+INCSC (s)', fontweight='bold')
-ax.set_title('Time Comparison: POSE+INCSC vs. DSE+INCSC', fontweight='bold', pad=15)
+# ax.set_title('Time Comparison: POSE+INCSC vs. DSE+INCSC', fontweight='bold', pad=15)
 
 # Tùy chỉnh Legend
 # ax.legend(loc='upper left', frameon=True, edgecolor='black')

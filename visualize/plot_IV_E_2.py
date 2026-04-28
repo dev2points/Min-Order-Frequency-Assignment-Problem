@@ -3,10 +3,11 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
 import re
 from datetime import datetime
 
-# Compact IEEE 1-column style for dense categorical bars.
+# Compact IEEE-style figure, rendered slightly wider so LaTeX can scale it down cleanly.
 plt.rcParams['font.family'] = 'serif'
 plt.rcParams['font.size'] = 7
 plt.rcParams['axes.titlesize'] = 8
@@ -14,14 +15,11 @@ plt.rcParams['axes.labelsize'] = 7.5
 plt.rcParams['xtick.labelsize'] = 6.3
 plt.rcParams['ytick.labelsize'] = 6.8
 plt.rcParams['legend.fontsize'] = 6
-plt.rcParams['hatch.linewidth'] = 0.4
+plt.rcParams['hatch.linewidth'] = 0.25
 
 BASE_DIR = Path(__file__).resolve().parent
 CSV_PATH = BASE_DIR / "result_file" / "preprocess.csv"
 
-# ==========================================================
-# TRẢ LẠI MAP CHUẨN XÁC 100% CỦA BẠN
-# ==========================================================
 SOLVER_MAP = {
     "PSE nsc_asumptions": "POSE+INCSC",
     "Gurobi": "Gurobi",
@@ -31,16 +29,15 @@ SOLVER_MAP = {
 
 
 def _canon_header(s: str) -> str:
-    # Chuẩn hóa nhẹ để map đúng dù header có khoảng trắng/kiểu chữ khác nhau
     return " ".join(str(s).strip().lower().split())
 
 
 _CANON_SOLVER_MAP = {_canon_header(k): v for k, v in SOLVER_MAP.items()}
 
 
-# Hàm parse giá trị Solution
 def _to_sol(v):
-    if pd.isna(v): return None
+    if pd.isna(v):
+        return None
     t = str(v).strip().upper()
     if t in {"", "-", "TO", "TIMEOUT", "OOM", "N/A"}:
         return None
@@ -98,12 +95,10 @@ def _format_instance_name(name: str) -> str:
         return f"G{int(m.group(1)):02d}"
     m = re.fullmatch(r"(?i)tud(\d+)\.(\d+)", s)
     if m:
-        # Keep the same shorthand style used in the notebook: T9.1, T2.5, ...
         return f"T{str(int(m.group(1)))[0]}.{int(m.group(2))}"
     return s
 
 
-# 1. Đọc dữ liệu
 print("--- READING CSV FILE ---")
 flat_df = _flatten_raw_csv(CSV_PATH)
 print("Parsed columns:", list(flat_df.columns))
@@ -112,30 +107,24 @@ instances = []
 pose_sols, gur_sols, cp_sols, mip_sols = [], [], [], []
 pose_opt_flags, gur_opt_flags, cp_opt_flags, mip_opt_flags = [], [], [], []
 
-# 2. TỰ ĐỘNG LỌC DỮ LIỆU
 for _, row in flat_df.iterrows():
     bench = row.get("Bench")
 
-    # GỌI ĐÚNG TÊN CỘT CÓ DẤU CỘNG VÀ GẠCH NGANG THEO MAP CỦA BẠN
     s_pose = _to_sol(row.get("POSE+INCSC__Solution"))
     s_gur = _to_sol(row.get("Gurobi__Solution"))
     s_cp = _to_sol(row.get("CPLEX-CP__Solution"))
     s_mip = _to_sol(row.get("CPLEX-MIP__Solution"))
 
-    # Bỏ qua các bài toán Infeasible (Vô nghiệm từ đầu)
     if s_pose is None:
         continue
 
-    # Kiểm tra xem các solver có ra nghiệm kém hơn không?
     match_gur = (s_gur == s_pose)
     match_cp = (s_cp == s_pose)
     match_mip = (s_mip == s_pose)
 
-    # Nếu tất cả commercial đều bằng POSE thì bỏ qua để biểu đồ gọn hơn
     if match_gur and match_cp and match_mip:
         continue
 
-    # Đưa vào danh sách vẽ
     instances.append(_format_instance_name(bench))
     pose_sols.append(s_pose)
     gur_sols.append(s_gur if s_gur is not None else 0)
@@ -155,76 +144,138 @@ print(f"-> Selected {len(instances)} instances for plotting: {instances}")
 if len(instances) == 0:
     print("\n[WARNING] No data found for plotting. Please verify CSV content.")
 else:
-    # 3. Vẽ biểu đồ Bar Chart (1 cột IEEE)
     x = np.arange(len(instances))
-    width = 0.16
+    width = 0.19
 
-    # Slightly taller than standard to avoid x-label collisions in 1-column format.
-    fig, ax = plt.subplots(figsize=(3.45, 2.9))
+    # Slightly wider than 1-column so the exported figure stays readable after LaTeX scaling.
+    fig, ax = plt.subplots(figsize=(4.2, 2.9))
 
-    # MÀU SẮC ĐỒNG BỘ CACTUS PLOT + HẠT CHÉO ĐỂ IN ĐEN TRẮNG VẪN PHÂN BIỆT ĐƯỢC
-    rects1 = ax.bar(x - 1.5 * width, pose_sols, width, label='POSE+INCSC', color='steelblue',
-                    edgecolor='black', hatch='', linewidth=0.55, zorder=3)
-    rects2 = ax.bar(x - 0.5 * width, gur_sols, width, label='Gurobi', color='forestgreen',
-                    edgecolor='black', hatch='///', linewidth=0.55, zorder=3)
-    rects3 = ax.bar(x + 0.5 * width, cp_sols, width, label='CPLEX-CP', color='#FF00FF',
-                    edgecolor='black', hatch='\\\\\\', linewidth=0.55, zorder=3)
-    rects4 = ax.bar(x + 1.5 * width, mip_sols, width, label='CPLEX-MIP', color='darkorange',
-                    edgecolor='black', hatch='xxx', linewidth=0.55, zorder=3)
+    rects1 = ax.bar(
+        x - 1.5 * width, pose_sols, width,
+        label='POSE+INCSC',
+        color='steelblue',
+        edgecolor='black',
+        # hatch='',
+        linewidth=0.3,
+        zorder=3
+    )
+    rects2 = ax.bar(
+        x - 0.5 * width, gur_sols, width,
+        label='Gurobi',
+        color='forestgreen',
+        edgecolor='black',
+        # hatch='/',
+        linewidth=0.3,
+        zorder=3
+    )
+    rects3 = ax.bar(
+        x + 0.5 * width, cp_sols, width,
+        label='CPLEX-CP',
+        color='#FF00FF',
+        edgecolor='black',
+        # hatch='',
+        linewidth=0.3,
+        zorder=3
+    )
+    rects4 = ax.bar(
+        x + 1.5 * width, mip_sols, width,
+        label='CPLEX-MIP',
+        color='darkorange',
+        edgecolor='black',
+        # hatch='\\',
+        linewidth=0.3,
+        zorder=3
+    )
 
     ax.set_ylabel('Solution Value (No. of Frequencies)', fontweight='bold')
     ax.set_xlabel('Instances (Different Solution Value)', fontweight='bold')
-    ax.set_title('Solution comparison between POSE+INCSC and Commercial Solvers', fontweight='bold', fontsize=5.5)
+    # The figure caption already serves as the title in the manuscript.
+    # ax.set_title('POSE+INCSC vs. Commercial Solvers', fontweight='bold', fontsize=6)
+
     ax.set_xticks(x)
     ax.set_xticklabels(instances, rotation=30, ha='right')
 
-
-    # 4. Tự động dán nhãn N/A cho các cột bị gán bằng 0
     def annotate_na(rects, sols):
         for i, rect in enumerate(rects):
             if sols[i] == 0:
-                ax.text(rect.get_x() + rect.get_width() / 2, 1.1, 'N/A', ha='center', va='bottom',
-                        color='black', fontweight='bold', rotation=90, fontsize=6)
+                ax.text(
+                    rect.get_x() + rect.get_width() / 2,
+                    0.9,
+                    'N/A',
+                    ha='center',
+                    va='bottom',
+                    color='0.2',
+                    fontweight='bold',
+                    rotation=90,
+                    fontsize=5.6
+                )
 
     def annotate_opt(rects, sols, flags):
         for i, rect in enumerate(rects):
             if i < len(flags) and flags[i] and sols[i] > 0:
-                y = rect.get_height() + max(0.35, rect.get_height() * 0.015)
+                y = rect.get_height() + max(0.7, rect.get_height() * 0.025)
                 ax.scatter(
                     rect.get_x() + rect.get_width() / 2,
                     y,
                     marker='*',
-                    s=10,
+                    s=6,
                     c='black',
-                    zorder=5,
+                    zorder=6,
                     clip_on=False,
                 )
-
 
     annotate_na(rects2, gur_sols)
     annotate_na(rects3, cp_sols)
     annotate_na(rects4, mip_sols)
+
     annotate_opt(rects1, pose_sols, pose_opt_flags)
     annotate_opt(rects2, gur_sols, gur_opt_flags)
     annotate_opt(rects3, cp_sols, cp_opt_flags)
     annotate_opt(rects4, mip_sols, mip_opt_flags)
 
-    # Kẻ lưới ngang
     ax.grid(axis='y', linestyle='--', alpha=0.5, zorder=0)
 
-    # Cấu hình Legend
-    opt_handle = Line2D([0], [0], marker='*', color='black', linestyle='None', markersize=4.5,
-                        label='Optimal')
-    ax.legend(handles=[rects1, rects2, rects3, rects4, opt_handle],
-              loc='upper left', frameon=True, edgecolor='black', ncol=1,
-              borderpad=0.35, handlelength=1.4, labelspacing=0.35)
+    legend_handles = [
+        # Patch(facecolor='steelblue', edgecolor='black', hatch='', linewidth=0.3, label='POSE+INCSC'),
+        # Patch(facecolor='forestgreen', edgecolor='black', hatch='///', linewidth=0.3, label='Gurobi'),
+        # Patch(facecolor='#FF00FF', edgecolor='black', hatch='', linewidth=0.3, label='CPLEX-CP'),
+        # Patch(facecolor='darkorange', edgecolor='black', hatch='\\\\\\', linewidth=0.3, label='CPLEX-MIP'),
+        Patch(facecolor='steelblue', edgecolor='black', linewidth=0.3, label='POSE+INCSC'),
+        Patch(facecolor='forestgreen', edgecolor='black', linewidth=0.3, label='Gurobi'),
+        Patch(facecolor='#FF00FF', edgecolor='black', linewidth=0.3, label='CPLEX-CP'),
+        Patch(facecolor='darkorange', edgecolor='black', linewidth=0.3, label='CPLEX-MIP'),
+        Line2D(
+            [0], [0],
+            marker='*',
+            color='black',
+            markerfacecolor='black',
+            linestyle='None',
+            markersize=3.5,
+            label='Optimal'
+        )
+    ]
+
+    ax.legend(
+        handles=legend_handles,
+        loc='upper left',
+        frameon=True,
+        facecolor='white',
+        edgecolor='0.35',
+        framealpha=0.95,
+        ncol=1,
+        borderpad=0.35,
+        handlelength=1.8,
+        handleheight=1.0,
+        handletextpad=0.8,
+        labelspacing=0.35
+    )
 
     ax.margins(x=0.05)
     plt.tight_layout(pad=0.25)
 
-    # 5. Lưu file
     fig_dir = BASE_DIR / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
+
     def _safe_save(fig_obj, out_path: Path, fmt: str):
         try:
             fig_obj.savefig(out_path, format=fmt, dpi=300)

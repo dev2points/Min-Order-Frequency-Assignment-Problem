@@ -132,7 +132,7 @@ if instances:
 
 ax.set_ylabel('Time (s)', fontweight='bold')
 ax.set_xlabel('Instances (Different Solving Time)', fontweight='bold')
-ax.set_title('Time Comparison: POSE+INCSC vs. POSE+INC', fontweight='bold', pad=20)
+# ax.set_title('Time Comparison: POSE+INCSC vs. POSE+INC', fontweight='bold', pad=20)
 
 # Xoay tên instance 45 độ cho dễ đọc
 ax.set_xticks(x)

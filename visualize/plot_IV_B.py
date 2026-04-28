@@ -179,7 +179,7 @@ def plot_time_tradeoff_by_solver(comp_df: pd.DataFrame):
     ax.set_yscale("log")
     ax.set_ylabel("Median solving time (s)", fontweight="bold")
     ax.set_xlabel("Method", fontweight="bold")
-    ax.set_title("Pre-processing vs. No Pre-processing (per method)", fontweight="bold", pad=12)
+    # ax.set_title("Pre-processing vs. No Pre-processing (per method)", fontweight="bold", pad=12)
     ax.set_xticks(x)
     ax.set_xticklabels(agg["Solver"], rotation=15)
     ax.grid(axis="y", linestyle="--", alpha=0.45)
@@ -243,7 +243,7 @@ def plot_runtime_scatter_by_solver(comp_df: pd.DataFrame):
     ax.set_ylim(lo, hi)
     ax.set_xlabel("Time without pre-processing (s)", fontweight="bold")
     ax.set_ylabel("Time with pre-processing (s)", fontweight="bold")
-    ax.set_title(PREPROCESS_CAPTION, fontweight="bold", pad=12)
+    # ax.set_title(PREPROCESS_CAPTION, fontweight="bold", pad=12)
     ax.grid(True, which="both", linestyle="--", alpha=0.35)
 
     # Split legend: colors for solvers, markers for status (on pre-processing side)

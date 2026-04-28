@@ -170,7 +170,7 @@ ax.tick_params(axis='y', labelsize=11)
 
 ax.set_ylabel('Time POSE+INC / Time POSE+INCSC)', fontweight='bold', fontsize=10)
 ax.set_xlabel('Instances (Same Solution Value)', fontweight='bold')
-ax.set_title('Time Comparison: POSE+INCSC vs. POSE+INC', fontweight='bold', pad=15)
+# ax.set_title('Time Comparison: POSE+INCSC vs. POSE+INC', fontweight='bold', pad=15)
 
 # Thêm vạch lưới ngang cho dễ g\caption{Relative execution time comparison between the proposed POSE+INCSC and baseline POSE+INC on selected computationally demanding instances. Percentages indicate the relative time saved (green, negative) or increased (red, positive) by utilizing the INCSC strategy.}ióng
 ax.grid(axis='y', linestyle=':', alpha=0.5)
