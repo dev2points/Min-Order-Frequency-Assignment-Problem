@@ -37,17 +37,20 @@ def read_var(file, domain):
     var = {}
     with open(file) as f:
         for line in f:
-            line = line.strip()
-            if not line or line == '\x00': continue
-            parts = line.split()
+            parts = line.strip().split()
+            if not parts:
+                continue
             idx = int(parts[0])
             if len(parts) >= 4:
-                # Nếu biến đã được gán cứng giá trị (fixed)
-                var[idx] = [int(parts[-2])]
+                domain_idx = int(parts[1])
+                if int(parts[-2]) not in domain[domain_idx]:
+                    print(f"Warning: variable {idx} has assigned label {parts[-2]} that is not in the domain {domain_idx}.")
+                    return None
+                else:
+                    var[idx] = [int(parts[-2])]
             else:
-                # Lấy tập nhãn rời rạc từ domain tương ứng
                 var[idx] = domain[int(parts[1])]
-    return var
+    return var # domain subset for each variable
 
 def delete_invalid_labels(var, ctr_file):
     # Read constraints and remove invalid labels from domain
@@ -143,11 +146,17 @@ def main():
     # Bước 1: Đọc dữ liệu
     domain_data = read_domain(files["domain"])
     var_data = read_var(files["var"], domain_data)
+    if var_data is None:
+        print("Cannot find solution!")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
+        process = psutil.Process(os.getpid())
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
+        return
     if(not delete_invalid_labels(var_data, files["ctr"])):
         print("Cannot find solution!")
-        print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
         process = psutil.Process(os.getpid())
-        print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
         return
         
         
@@ -167,9 +176,9 @@ def main():
     status = result.get_solve_status()
     if status not in ("Optimal", "Feasible"):
         print("No valid solution:", status)
-        print(f"Total time: {time.perf_counter() - start_time:.2f}s")
+        print(f"Total time: {time.perf_counter() - start_time:.5f}s")
         process = psutil.Process(os.getpid())
-        print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
         return
     
     # Bước 4: Xuất kết quả
@@ -192,8 +201,8 @@ def main():
     # Thông số hệ thống
     end_time = time.perf_counter()
     process = psutil.Process(os.getpid())
-    print(f"Total time: {end_time - start_time:.2f}s")
-    print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+    print(f"Total time: {end_time - start_time:.5f}s")
+    print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
 
 if __name__ == "__main__":
     main()

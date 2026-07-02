@@ -1,0 +1,50 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main.py
+[runlim] argv[3]:		graph08
+[runlim] argv[4]:		POSE
+[runlim] start:			Thu Jun 11 21:38:28 2026
+[runlim] child:			5723
+---  POSE  ---
+ solving MaxSAT (RC2)...
+[runlim] sample:		9.99 time, 10.01 real, 107 MB, 1.03 load
+[runlim] sample:		19.99 time, 20.01 real, 108 MB, 1.02 load
+[runlim] sample:		29.99 time, 30.01 real, 126 MB, 1.02 load
+[runlim] sample:		39.99 time, 40.01 real, 126 MB, 1.02 load
+[runlim] sample:		49.98 time, 50.01 real, 126 MB, 1.01 load
+[runlim] sample:		59.98 time, 60.01 real, 126 MB, 1.01 load
+[runlim] sample:		69.97 time, 70.01 real, 126 MB, 1.01 load
+[runlim] sample:		79.97 time, 80.01 real, 126 MB, 1.01 load
+[runlim] sample:		89.97 time, 90.01 real, 126 MB, 1.09 load
+[runlim] sample:		99.97 time, 100.01 real, 126 MB, 1.07 load
+[runlim] sample:		109.96 time, 110.01 real, 115 MB, 1.06 load
+[runlim] sample:		119.96 time, 120.01 real, 130 MB, 1.05 load
+[runlim] sample:		129.96 time, 130.01 real, 134 MB, 1.04 load
+[runlim] sample:		139.95 time, 140.01 real, 137 MB, 1.04 load
+[runlim] sample:		149.95 time, 150.01 real, 138 MB, 1.03 load
+[runlim] sample:		159.94 time, 160.01 real, 151 MB, 1.02 load
+[runlim] sample:		169.95 time, 170.01 real, 157 MB, 1.02 load
+[runlim] sample:		179.94 time, 180.01 real, 157 MB, 1.02 load
+[runlim] sample:		189.94 time, 190.01 real, 161 MB, 1.01 load
+
+--------------------------------------------------
+Found solution!
+Number of labels used: 18
+--------------------------------------------------
+Time taken: 193.93 seconds
+Memory used: 158.48 MB
+[runlim] end:			Thu Jun 11 21:41:42 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			194.00 seconds
+[runlim] time:			193.83 seconds
+[runlim] space:			161 MB
+[runlim] load:			1.09 maximum
+[runlim] samples:		1940

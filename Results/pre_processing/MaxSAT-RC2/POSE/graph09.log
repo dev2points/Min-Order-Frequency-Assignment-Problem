@@ -1,0 +1,65 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main.py
+[runlim] argv[3]:		graph09
+[runlim] argv[4]:		POSE
+[runlim] start:			Thu Jun 11 21:41:42 2026
+[runlim] child:			5733
+---  POSE  ---
+ solving MaxSAT (RC2)...
+[runlim] sample:		9.99 time, 10.01 real, 122 MB, 1.01 load
+[runlim] sample:		19.99 time, 20.01 real, 147 MB, 1.01 load
+[runlim] sample:		29.99 time, 30.01 real, 148 MB, 1.01 load
+[runlim] sample:		39.98 time, 40.01 real, 148 MB, 1.01 load
+[runlim] sample:		49.98 time, 50.01 real, 149 MB, 1.00 load
+[runlim] sample:		59.97 time, 60.01 real, 150 MB, 1.00 load
+[runlim] sample:		69.97 time, 70.01 real, 157 MB, 1.00 load
+[runlim] sample:		79.97 time, 80.01 real, 158 MB, 1.00 load
+[runlim] sample:		89.96 time, 90.01 real, 141 MB, 1.00 load
+[runlim] sample:		99.95 time, 100.01 real, 160 MB, 1.00 load
+[runlim] sample:		109.95 time, 110.01 real, 160 MB, 1.00 load
+[runlim] sample:		119.95 time, 120.01 real, 163 MB, 1.00 load
+[runlim] sample:		129.94 time, 130.01 real, 164 MB, 1.00 load
+[runlim] sample:		139.94 time, 140.01 real, 165 MB, 1.00 load
+[runlim] sample:		149.93 time, 150.01 real, 166 MB, 1.08 load
+[runlim] sample:		159.93 time, 160.01 real, 167 MB, 1.14 load
+[runlim] sample:		169.93 time, 170.01 real, 167 MB, 1.12 load
+[runlim] sample:		179.92 time, 180.01 real, 168 MB, 1.10 load
+[runlim] sample:		189.92 time, 190.01 real, 169 MB, 1.08 load
+[runlim] sample:		199.91 time, 200.01 real, 170 MB, 1.07 load
+[runlim] sample:		209.90 time, 210.01 real, 171 MB, 1.06 load
+[runlim] sample:		219.90 time, 220.01 real, 171 MB, 1.21 load
+[runlim] sample:		229.89 time, 230.01 real, 172 MB, 1.34 load
+[runlim] sample:		239.89 time, 240.01 real, 173 MB, 1.29 load
+[runlim] sample:		249.88 time, 250.01 real, 174 MB, 1.24 load
+[runlim] sample:		259.88 time, 260.01 real, 175 MB, 1.20 load
+[runlim] sample:		269.87 time, 270.01 real, 176 MB, 1.17 load
+[runlim] sample:		279.87 time, 280.01 real, 177 MB, 1.15 load
+[runlim] sample:		289.87 time, 290.01 real, 177 MB, 1.12 load
+[runlim] sample:		299.86 time, 300.01 real, 178 MB, 1.10 load
+[runlim] sample:		309.86 time, 310.01 real, 179 MB, 1.09 load
+[runlim] sample:		319.85 time, 320.01 real, 180 MB, 1.07 load
+[runlim] sample:		329.84 time, 330.01 real, 185 MB, 1.06 load
+[runlim] sample:		339.84 time, 340.01 real, 185 MB, 1.05 load
+
+--------------------------------------------------
+Found solution!
+Number of labels used: 18
+--------------------------------------------------
+Time taken: 340.59 seconds
+Memory used: 179.42 MB
+[runlim] end:			Thu Jun 11 21:47:23 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			340.66 seconds
+[runlim] time:			340.44 seconds
+[runlim] space:			185 MB
+[runlim] load:			1.34 maximum
+[runlim] samples:		3407

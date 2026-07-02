@@ -1,0 +1,33 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		evalmaxsat.py
+[runlim] argv[3]:		TUD200.2
+[runlim] argv[4]:		POSE
+[runlim] start:			Tue Jun 30 13:50:44 2026
+[runlim] child:			11123
+[INFO] Generating WCNF for TUD200.2 (POSE)
+[INFO] Solving wcnf/processing/POSE/TUD200.2_POSE.wcnf
+c nombre de var = 450
+o 46
+s OPTIMUM FOUND
+v 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111101111111111111111111111111111
+c Total time : 0.000937405s
+[INFO] Decode summary
+[INFO] status=OPTIMUM FOUND, objective=46, assigned_vars=200, complete=True, labels_used=46
+[INFO] Decoded assignment file: results/processing/decode/POSE/TUD200.2.decoded.txt
+Time taken: 0.07 seconds
+[runlim] end:			Tue Jun 30 13:50:44 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		0
+[runlim] processes:		0
+[runlim] real:			0.11 seconds
+[runlim] time:			0.00 seconds
+[runlim] space:			0 MB
+[runlim] load:			1.12 maximum
+[runlim] samples:		1

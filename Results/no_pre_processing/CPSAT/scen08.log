@@ -1,0 +1,36 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main_no.py
+[runlim] argv[3]:		scen08
+[runlim] argv[4]:		600
+[runlim] start:			Sun Jun 14 18:35:36 2026
+[runlim] child:			61431
+Dataset: scen08
+Preprocessing: off
+Building CP-SAT model for 916 variables...
+[runlim] sample:		11.08 time, 10.01 real, 739 MB, 4.96 load
+Number of assignment variables: 36200
+Number of label variables: 48
+Build time: 13.75s
+Solving with OR-Tools CP-SAT...
+[runlim] sample:		21.07 time, 20.01 real, 2450 MB, 4.35 load
+Status: INFEASIBLE
+No solution found.
+Objective bound: 0.0
+Total time: 25.31s
+Memory used: 2331.10 MB
+[runlim] end:			Sun Jun 14 18:36:03 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			26.23 seconds
+[runlim] time:			27.27 seconds
+[runlim] space:			2759 MB
+[runlim] load:			5.68 maximum
+[runlim] samples:		263

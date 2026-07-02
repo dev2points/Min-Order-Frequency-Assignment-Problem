@@ -1,0 +1,72 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main_no.py
+[runlim] argv[3]:		TUD200.3
+[runlim] argv[4]:		600
+[runlim] start:			Sun Jun 14 18:36:19 2026
+[runlim] child:			61687
+Dataset: TUD200.3
+Preprocessing: off
+Building CP-SAT model for 200 variables...
+Number of assignment variables: 7240
+Number of label variables: 48
+Build time: 0.83s
+Solving with OR-Tools CP-SAT...
+Number of labels used: 48
+Time taken: 2.58s
+Number of labels used: 32
+Time taken: 2.66s
+Number of labels used: 30
+Time taken: 2.67s
+Number of labels used: 28
+Time taken: 2.68s
+Number of labels used: 26
+Time taken: 2.69s
+Number of labels used: 26
+Time taken: 2.69s
+Number of labels used: 24
+Time taken: 2.70s
+Number of labels used: 24
+Time taken: 2.71s
+Number of labels used: 22
+Time taken: 2.72s
+Number of labels used: 22
+Time taken: 2.73s
+Number of labels used: 20
+Time taken: 2.74s
+Number of labels used: 20
+Time taken: 2.74s
+Number of labels used: 18
+Time taken: 2.76s
+Number of labels used: 16
+Time taken: 2.81s
+Number of labels used: 16
+Time taken: 2.81s
+Number of labels used: 14
+Time taken: 3.01s
+Number of labels used: 14
+Time taken: 3.19s
+Status: OPTIMAL
+Solution:
+{1: 470, 2: 708, 3: 86, 4: 324, 5: 324, 6: 86, 7: 142, 8: 380, 9: 470, 10: 708, 11: 478, 12: 240, 13: 414, 14: 652, 15: 86, 16: 324, 17: 478, 18: 240, 19: 324, 20: 86, 21: 652, 22: 414, 23: 652, 24: 414, 25: 540, 26: 778, 27: 652, 28: 414, 29: 380, 30: 142, 31: 540, 32: 778, 33: 142, 34: 380, 35: 142, 36: 380, 37: 708, 38: 470, 39: 778, 40: 540, 41: 324, 42: 86, 43: 86, 44: 324, 45: 254, 46: 16, 47: 380, 48: 142, 49: 414, 50: 652, 51: 324, 52: 86, 53: 708, 54: 470, 55: 324, 56: 86, 57: 142, 58: 380, 59: 540, 60: 778, 61: 324, 62: 86, 63: 470, 64: 708, 65: 16, 66: 254, 67: 470, 68: 708, 69: 380, 70: 142, 71: 708, 72: 470, 73: 708, 74: 470, 75: 652, 76: 414, 77: 16, 78: 254, 79: 778, 80: 540, 81: 142, 82: 380, 83: 380, 84: 142, 85: 380, 86: 142, 87: 540, 88: 778, 89: 540, 90: 778, 91: 652, 92: 414, 93: 254, 94: 16, 95: 86, 96: 324, 97: 478, 98: 240, 99: 142, 100: 380, 101: 16, 102: 254, 103: 142, 104: 380, 105: 254, 106: 16, 107: 254, 108: 16, 109: 380, 110: 142, 111: 324, 112: 86, 113: 254, 114: 16, 115: 16, 116: 254, 117: 708, 118: 470, 119: 470, 120: 708, 121: 240, 122: 478, 123: 540, 124: 778, 125: 778, 126: 540, 127: 778, 128: 540, 129: 414, 130: 652, 131: 478, 132: 240, 133: 540, 134: 778, 135: 778, 136: 540, 137: 414, 138: 652, 139: 142, 140: 380, 141: 324, 142: 86, 143: 708, 144: 470, 145: 16, 146: 254, 147: 414, 148: 652, 149: 414, 150: 652, 151: 324, 152: 86, 153: 86, 154: 324, 155: 540, 156: 778, 157: 708, 158: 470, 159: 16, 160: 254, 161: 142, 162: 380, 163: 708, 164: 470, 165: 16, 166: 254, 167: 778, 168: 540, 169: 86, 170: 324, 171: 16, 172: 254, 173: 142, 174: 380, 175: 652, 176: 414, 177: 16, 178: 254, 179: 240, 180: 478, 181: 708, 182: 470, 183: 86, 184: 324, 185: 540, 186: 778, 187: 254, 188: 16, 189: 540, 190: 778, 191: 470, 192: 708, 193: 540, 194: 778, 195: 254, 196: 16, 197: 380, 198: 142, 199: 778, 200: 540}
+Number of labels used: 14
+Objective value: 14.0
+Best objective bound: 14.0
+Solution is CORRECT!
+Total time: 5.24s
+Memory used: 401.73 MB
+[runlim] end:			Sun Jun 14 18:36:24 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			5.64 seconds
+[runlim] time:			34.19 seconds
+[runlim] space:			405 MB
+[runlim] load:			4.28 maximum
+[runlim] samples:		57

@@ -1,0 +1,26 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main.py
+[runlim] argv[3]:		graph13
+[runlim] argv[4]:		600
+[runlim] start:			Sun Jun 14 17:42:13 2026
+[runlim] child:			53742
+Warning: variable 777 has no valid labels after preprocessing.
+Cannot find solution!
+Total time: 0.26s
+Memory used: 84.19 MB
+[runlim] end:			Sun Jun 14 17:42:14 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.62 seconds
+[runlim] time:			1.67 seconds
+[runlim] space:			84 MB
+[runlim] load:			12.30 maximum
+[runlim] samples:		7

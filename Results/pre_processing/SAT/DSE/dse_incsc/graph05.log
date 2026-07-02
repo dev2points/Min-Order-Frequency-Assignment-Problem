@@ -1,0 +1,34 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		pairwise.py
+[runlim] argv[3]:		graph05
+[runlim] argv[4]:		nsc
+[runlim] argv[5]:		assumptions
+[runlim] argv[6]:		cadical195
+[runlim] start:			Sat Jun 27 03:00:11 2026
+[runlim] child:			18163
+Exactly-one cardinality encoding:  1
+Distance constraint mode:  pairwise
+Distance cardinality encoding:  1
+Objective strategy:  nsc
+SAT type:  assumptions
+Solver:  cadical195
+Warning: variable 181 has no valid labels after preprocessing.
+Cannot find solution!
+Time taken: 0.03 seconds
+Memory used: 20.34 MB
+[runlim] end:			Sat Jun 27 03:00:11 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		0
+[runlim] processes:		0
+[runlim] real:			0.07 seconds
+[runlim] time:			0.00 seconds
+[runlim] space:			0 MB
+[runlim] load:			1.02 maximum
+[runlim] samples:		1

@@ -17,7 +17,6 @@ mkdir -p $RESULTS_DIR
 ./runlim -r $TO -s $MO  python3 -u main.py scen03  2>&1 | tee $RESULTS_DIR/scen03.log
 ./runlim -r $TO -s $MO  python3 -u main.py scen04  2>&1 | tee $RESULTS_DIR/scen04.log
 ./runlim -r $TO -s $MO  python3 -u main.py scen11  2>&1 | tee $RESULTS_DIR/scen11.log
-
 ./runlim -r $TO -s $MO  python3 -u main.py graph03  2>&1 | tee $RESULTS_DIR/graph03.log
 ./runlim -r $TO -s $MO  python3 -u main.py graph04  2>&1 | tee $RESULTS_DIR/graph04.log
 ./runlim -r $TO -s $MO  python3 -u main.py graph05  2>&1 | tee $RESULTS_DIR/graph05.log

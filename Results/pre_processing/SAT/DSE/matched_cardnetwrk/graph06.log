@@ -1,0 +1,32 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		pairwise.py
+[runlim] argv[3]:		graph06
+[runlim] argv[4]:		assumptions
+[runlim] argv[5]:		3
+[runlim] argv[6]:		card
+[runlim] argv[7]:		3
+[runlim] start:			Sun Jun 14 01:55:17 2026
+[runlim] child:			18515
+Exactly-one cardinality encoding:  3
+Distance constraint mode:  card
+Distance cardinality encoding:  3
+Warning: variable 365 has no valid labels after preprocessing.
+Cannot find solution!
+Time taken: 0.07 seconds
+Memory used: 20.57 MB
+[runlim] end:			Sun Jun 14 01:55:17 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.11 seconds
+[runlim] time:			0.10 seconds
+[runlim] space:			20 MB
+[runlim] load:			1.02 maximum
+[runlim] samples:		2

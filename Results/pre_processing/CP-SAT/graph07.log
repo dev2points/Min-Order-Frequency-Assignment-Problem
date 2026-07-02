@@ -1,0 +1,26 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		main.py
+[runlim] argv[3]:		graph07
+[runlim] argv[4]:		600
+[runlim] start:			Tue Jun 30 15:16:38 2026
+[runlim] child:			19329
+Warning: variable 182 has assigned label 716 that is not in the domain 5.
+Cannot find solution!
+Time taken: 0.00030 seconds
+Memory used: 82.52344 MB
+[runlim] end:			Tue Jun 30 15:16:38 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.34 seconds
+[runlim] time:			1.38 seconds
+[runlim] space:			82 MB
+[runlim] load:			1.49 maximum
+[runlim] samples:		4

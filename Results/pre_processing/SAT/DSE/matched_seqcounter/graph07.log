@@ -1,0 +1,37 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		pairwise.py
+[runlim] argv[3]:		graph07
+[runlim] argv[4]:		nsc
+[runlim] argv[5]:		assumptions
+[runlim] argv[6]:		cadical195
+[runlim] argv[7]:		1
+[runlim] argv[8]:		card
+[runlim] argv[9]:		1
+[runlim] start:			Tue Jun 30 15:29:29 2026
+[runlim] child:			20936
+Exactly-one cardinality encoding:  1
+Distance constraint mode:  card
+Distance cardinality encoding:  1
+Objective strategy:  nsc
+SAT type:  assumptions
+Solver:  cadical195
+Warning: variable 182 has assigned label 716 that is not in the domain 5.
+Cannot find solution!
+Time taken: 0.00028 seconds
+Memory used: 17.14844 MB
+[runlim] end:			Tue Jun 30 15:29:29 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		0
+[runlim] processes:		0
+[runlim] real:			0.04 seconds
+[runlim] time:			0.00 seconds
+[runlim] space:			0 MB
+[runlim] load:			0.47 maximum
+[runlim] samples:		1

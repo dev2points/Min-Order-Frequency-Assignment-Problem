@@ -1,0 +1,30 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		evalmaxsat_no_processing.py
+[runlim] argv[3]:		graph11
+[runlim] argv[4]:		POSE
+[runlim] start:			Tue Jun 30 14:19:34 2026
+[runlim] child:			13159
+[INFO] Generating WCNF for graph11 (POSE)
+[INFO] Solving wcnf/no_preprocessing/POSE/graph11_POSE.wcnf
+s UNSATISFIABLE
+c Total time : 0.0909967s
+[INFO] Decode summary
+[INFO] status=UNSATISFIABLE, objective=None, assigned_vars=0, complete=False, labels_used=0
+[INFO] Decoded assignment file: results/no_preprocessing/decode/POSE/graph11.decoded.txt
+Time taken: 0.78 seconds
+[runlim] end:			Tue Jun 30 14:19:35 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		2
+[runlim] processes:		3
+[runlim] real:			0.83 seconds
+[runlim] time:			0.79 seconds
+[runlim] space:			73 MB
+[runlim] load:			1.06 maximum
+[runlim] samples:		9

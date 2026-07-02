@@ -1,0 +1,38 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		pairwise_no_preprocessing.py
+[runlim] argv[3]:		scen06
+[runlim] argv[4]:		nsc
+[runlim] argv[5]:		assumptions
+[runlim] argv[6]:		cadical195
+[runlim] start:			Sat Jun 27 01:33:46 2026
+[runlim] child:			17224
+Exactly-one cardinality encoding:  1
+Distance constraint mode:  pairwise
+Distance cardinality encoding:  1
+Objective strategy:  nsc
+SAT type:  assumptions
+Solver:  cadical195
+Number of assignment variables:  8020
+Number of clauses for exactly one constraints:  158898
+Number of clauses for distance constraints:  831974
+---------------------------------------------------
+Solve first problem:
+Cannot find solution.
+Time taken: 0.74 seconds 
+Memory used: 119.21 MB
+[runlim] end:			Sat Jun 27 01:33:47 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.82 seconds
+[runlim] time:			0.80 seconds
+[runlim] space:			114 MB
+[runlim] load:			1.00 maximum
+[runlim] samples:		9

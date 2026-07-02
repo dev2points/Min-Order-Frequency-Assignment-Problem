@@ -28,7 +28,7 @@ class MyIncumbentCallback(MIPInfoCallback):
         
         print(f"\nNum labels used: {len(used_labels)}" )
         print(f"Current incumbent solution: {{" + ", ".join(map(str, sorted(used_labels))) + "}}")
-        print(f"Time taken: {time.perf_counter() - self.start_time:.2f}s")
+        print(f"Time taken: {time.perf_counter() - self.start_time:.5f}s")
 
 def get_file_names(dataset_folder):
     base = os.path.basename(dataset_folder)
@@ -61,10 +61,19 @@ def read_var(file, domain):
     with open(file) as f:
         for line in f:
             parts = line.strip().split()
-            if not parts: continue
+            if not parts:
+                continue
             idx = int(parts[0])
-            var[idx] = [int(parts[-2])] if len(parts) >= 4 else domain[int(parts[1])]
-    return var
+            if len(parts) >= 4:
+                domain_idx = int(parts[1])
+                if int(parts[-2]) not in domain[domain_idx]:
+                    print(f"Warning: variable {idx} has assigned label {parts[-2]} that is not in the domain {domain_idx}.")
+                    return None
+                else:
+                    var[idx] = [int(parts[-2])]
+            else:
+                var[idx] = domain[int(parts[1])]
+    return var # domain subset for each variable
 
 def delete_invalid_labels(var, ctr_file):
     # Read constraints and remove invalid labels from domain
@@ -188,12 +197,18 @@ def main():
     
     domain = read_domain(files["domain"])
     var_data = read_var(files["var"], domain)
+    if var_data is None:
+        print("Cannot find solution due to invalid variable assignments!")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
+        process = psutil.Process(os.getpid())
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
+        return
 
     if(not delete_invalid_labels(var_data, files["ctr"])):
         print("Cannot find solution!")
-        print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
         process = psutil.Process(os.getpid())
-        print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
         return
 
     print(f"--- Building MIP model for {len(var_data)} variables ---")
@@ -231,8 +246,8 @@ def main():
     except CplexError:
         print("No solution found or the problem is infeasible.")
 
-    print(f"Total time: {time.perf_counter() - start_time:.2f}s")
-    print(f"Memory used: {psutil.Process(os.getpid()).memory_info().rss / 1024**2:.2f} MB")
+    print(f"Total time: {time.perf_counter() - start_time:.5f}s")
+    print(f"Memory used: {psutil.Process(os.getpid()).memory_info().rss / 1024**2:.5f} MB")
     print("="*30)
 
 if __name__ == "__main__":

@@ -1,0 +1,41 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			ap-Precision-7550
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	600 seconds
+[runlim] space limit:		14000 MB
+[runlim] argv[0]:		python3
+[runlim] argv[1]:		-u
+[runlim] argv[2]:		pairwise_no_preprocessing.py
+[runlim] argv[3]:		scen08
+[runlim] argv[4]:		assumptions
+[runlim] argv[5]:		6
+[runlim] argv[6]:		card
+[runlim] argv[7]:		6
+[runlim] start:			Sun Jun 14 00:23:38 2026
+[runlim] child:			17602
+Exactly-one cardinality encoding:  6
+Distance constraint mode:  card
+Distance cardinality encoding:  6
+Number of assignment variables:  36200
+Number of clauses for exactly one constraints:  910564
+[runlim] sample:		10.00 time, 10.01 real, 2189 MB, 1.11 load
+[runlim] sample:		20.00 time, 20.01 real, 4364 MB, 1.09 load
+[runlim] sample:		29.99 time, 30.01 real, 7047 MB, 1.15 load
+[runlim] sample:		39.99 time, 40.01 real, 8699 MB, 1.13 load
+Number of clauses for distance constraints:  54857138
+---------------------------------------------------
+Solve first problem:
+Cannot find solution.
+Time taken: 46.04 seconds 
+Memory used: 8748.63 MB
+[runlim] sample:		49.87 time, 49.96 real, 0 MB, 1.11 load
+[runlim] end:			Sun Jun 14 00:24:28 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			49.96 seconds
+[runlim] time:			49.87 seconds
+[runlim] space:			8998 MB
+[runlim] load:			1.17 maximum
+[runlim] samples:		500

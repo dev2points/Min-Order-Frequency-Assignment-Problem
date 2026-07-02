@@ -43,7 +43,12 @@ def read_var(file, domain):
                 continue
             idx = int(parts[0])
             if len(parts) >= 4:
-                var[idx] = [int(parts[-2])]
+                domain_idx = int(parts[1])
+                if int(parts[-2]) not in domain[domain_idx]:
+                    print(f"Warning: variable {idx} has assigned label {parts[-2]} that is not in the domain {domain_idx}.")
+                    return None
+                else:
+                    var[idx] = [int(parts[-2])]
             else:
                 var[idx] = domain[int(parts[1])]
     return var # domain subset for each variable
@@ -252,8 +257,118 @@ def amk_nsc(solver, lits, K):
     return rhs
 
 
+def amk_nsc_reduced(solver, lits, K):
+    if isinstance(lits, dict):
+        lits = list(lits.values())
 
+    n = len(lits)
+    top = solver.nof_vars()
 
+    # r[i][j] với i = 1..n, j = 1..K
+    r = [[0] * (K + 1) for _ in range(n + 1)]
+
+    # tạo biến phụ
+    for i in range(1, K):
+        for j in range(1, i + 1):
+            top += 1
+            r[i][j] = top
+    for i in range(K, n + 1):
+        for j in range(1, K + 1):
+            top += 1
+            r[i][j] = top
+
+    # (1)  ¬x_i ∨ r(i,1)
+    for i in range(1, n + 1):
+        solver.add_clause([-lits[i - 1], r[i][1]])
+
+    # (2)  ¬r(i-1,j) ∨ r(i,j)
+    for i in range(2, n + 1):
+        for j in range(1, min(i - 1, K) + 1):
+            solver.add_clause([-r[i - 1][j], r[i][j]])
+
+    # (3)  ¬x_i ∨ ¬r(i-1,j-1) ∨ r(i,j)
+    for i in range(2, n + 1):
+        for j in range(2, min(i, K) + 1):
+            solver.add_clause([-lits[i - 1], -r[i - 1][j - 1], r[i][j]])
+
+    # (8)  ¬x_i ∨ ¬r(i-1,K)
+    for i in range(K + 1, n + 1):
+        solver.add_clause([-lits[i - 1], -r[i - 1][K]])
+
+    # rhs[j-1] ⇔ sum(lits) ≤ j
+    rhs = [r[n][j] for j in range(1, K + 1)]
+    return rhs
+
+def amk_sc(solver, lits, K):
+    if isinstance(lits, dict):
+        lits = list(lits.values())
+    n = len(lits)
+    top = solver.nof_vars()
+
+    # s[i][j] : i in [0..n-1], j in [0..K-1]
+    s = [[0] * (K + 1) for _ in range(n + 1)]
+
+    # tạo biến phụ
+    for i in range(1, n + 1):
+        for j in range(1, K + 1):
+            top += 1
+            s[i][j] = top    
+
+    solver.add_clause([-lits[0], s[1][1]])  # (1)   
+    for j in range(2, K + 1):
+        solver.add_clause([-s[1][j]])       # (2)
+
+    for i in range(2, n + 1):
+        solver.add_clause([-lits[i - 1], s[i][1]])  # (3)
+        solver.add_clause([-s[i - 1][1], s[i][1]])      # (4)
+        for j in range(2, K + 1):
+            solver.add_clause([-lits[i - 1], -s[i - 1][j - 1], s[i][j]])  # (5)
+            solver.add_clause([-s[i - 1][j], s[i][j]])  # (6)
+        solver.add_clause([-lits[i - 1], -s[i - 1][K]])  # (7)
+    
+
+    rhs = [s[n][j] for j in range(1, K + 1)]
+
+    return rhs
+
+def amk_sc_reduced(solver, lits, K):
+    if isinstance(lits, dict):
+        lits = list(lits.values())
+    
+    n = len(lits)
+    top = solver.nof_vars()
+
+    # s[i][j] : i in [0..n-1], j in [0..K-1]
+    s = [[0] * K for _ in range(n)]
+
+    # tạo biến phụ
+    for i in range(n):
+        for j in range(K):
+            top += 1
+            s[i][j] = top
+
+    # (1) ¬x_i ∨ s[i][0]
+    for i in range(n):
+        solver.add_clause([-lits[i], s[i][0]])
+
+    # (2) ¬s[i-1][j] ∨ s[i][j]
+    for i in range(1, n):
+        for j in range(K):
+            solver.add_clause([-s[i-1][j], s[i][j]])
+
+    # (3) ¬x_i ∨ ¬s[i-1][j-1] ∨ s[i][j]
+    for i in range(1, n):
+        for j in range(1, K):
+            solver.add_clause([-lits[i], -s[i-1][j-1], s[i][j]])
+
+    # (4) ¬x_i ∨ ¬s[i-1][K-1]
+    for i in range(1, n):
+        solver.add_clause([-lits[i], -s[i-1][K-1]])
+
+    # rhs[j-1] <=> sum(lits) <= j
+    rhs = [s[n-1][j] for j in range(K)]
+
+    return rhs
 
 def amk_tot(solver, lits, K):
     if isinstance(lits, dict):
@@ -270,6 +385,12 @@ def amk_tot(solver, lits, K):
 def add_limit_label_constraints(solver, lits, K, strategy):
     if strategy == 'nsc':
         return amk_nsc(solver, lits, K)
+    elif strategy == 'sc':
+        return amk_sc(solver, lits, K)
+    elif strategy == 'sc_reduced':
+        return amk_sc_reduced(solver, lits, K)
+    elif strategy == 'nsc_reduced':
+        return amk_nsc_reduced(solver, lits, K)
     elif strategy == 'tot':
         return amk_tot(solver, lits, K)
 
@@ -371,11 +492,17 @@ def main():
 
     domain = read_domain(files["domain"])
     var = read_var(files["var"], domain)
+    if var is None:
+        print("Cannot find solution!")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
+        process = psutil.Process(os.getpid())
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
+        return
     if(not delete_invalid_labels(var, files["ctr"])):
         print("Cannot find solution!")
-        print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
         process = psutil.Process(os.getpid())
-        print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
         return
         
     last_var_num, var_map = create_var_map(var)
@@ -387,9 +514,9 @@ def main():
 
     assignment = solve_and_print(solver, var_map, None, None, 'first')
     if assignment is None:
-        print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
         process = psutil.Process(os.getpid())
-        print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
         return
     # if verify_solution(assignment, var, files["var"], files["ctr"]):
     #     print("Correct solution!")
@@ -401,9 +528,9 @@ def main():
     num_labels = len(set(assignment.values()))
     print("Number of lables used: ", num_labels)
     end_time = time.perf_counter()
-    print(f"Time taken: {end_time - start_time:.2f} seconds")
+    print(f"Time taken: {end_time - start_time:.5f} seconds")
     process = psutil.Process(os.getpid())
-    print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+    print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
     lable_var_map = create_label_var_map(domain[0], solver.nof_vars() + 1)
     build_label_constraints(solver, var_map, lable_var_map)
 
@@ -415,15 +542,15 @@ def main():
 
         assignment = solve_and_print(solver, var_map, None, None, 'first')
         if assignment is None:
-            print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+            print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
             process = psutil.Process(os.getpid())
-            print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+            print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
             return
         num_labels = len(set(assignment.values()))
         print("Number of lables used: ", num_labels)
     
     else:
-        rhs = add_limit_label_constraints(solver, lable_var_map,num_labels, sys.argv[2])
+        rhs = add_limit_label_constraints(solver, lable_var_map,num_labels - 1, sys.argv[2])
 
     while num_labels > 1:
         
@@ -433,9 +560,9 @@ def main():
         if assignment is None:
             print("No more solutions found.")
             print("Optimal number of labels used: ", num_labels)
-            print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+            print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
             process = psutil.Process(os.getpid())
-            print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+            print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
             break
         # if verify_solution(assignment, var, files["var"], files["ctr"]):
         #     print("Correct solution!")
@@ -444,9 +571,9 @@ def main():
         #     break
         num_labels = len(set(assignment.values())) 
         print("Number of lables used: ", num_labels)
-        print(f"Time taken: {time.perf_counter() - start_time:.2f} seconds")
+        print(f"Time taken: {time.perf_counter() - start_time:.5f} seconds")
         process = psutil.Process(os.getpid())
-        print(f"Memory used: {process.memory_info().rss / 1024**2:.2f} MB")
+        print(f"Memory used: {process.memory_info().rss / 1024**2:.5f} MB")
 
     solver.delete()
 

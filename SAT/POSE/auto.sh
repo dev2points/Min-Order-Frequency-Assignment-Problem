@@ -1,5 +1,5 @@
+./INC.sh
+./INC_no.sh
 
-./nsc_assumptions.sh
-./tot_assumptions.sh
-./nsc_assumptions_no_preprocessing.sh
-./tot_assumptions_no_preprocessing.sh
+./INCSC.sh
+./INCSC_no.sh
