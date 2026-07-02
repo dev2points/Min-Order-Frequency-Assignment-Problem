@@ -1,3 +1,0 @@
-Objective :
-  find a solution with the minimal number of used values
-

@@ -1,12 +1,12 @@
 # Min-Order-Frequency Assignment Problem
 
-This repository contains several implementations of the Min-Order-Frequency Assignment Problem, including Gurobi, CPLEX CP, CPLEX MIP, CPSAT, SAT-based models, EvalMaxSAT, and MaxSAT-RC2 variants. Each solver family has its own source code, dataset copy, and result/log layout.
+This repository contains several implementations of the Min-Order-Frequency Assignment Problem, including Gurobi, CPLEX CP, CPLEX MIP, CPSAT, SAT-based models, EvalMaxSAT, and MaxSAT-RC2 variants. Each solver family has its own source code, dataset copy, and execution-result layout.
 
 ## Repository Structure
 
 The shared instance library lives in [Datasets/](Datasets/), while each runnable module also keeps a local `dataset/` folder. Generated outputs are collected under [Results/](Results/), split into `pre_processing/` and `no_pre_processing/` runs.
 
-| Area | Source code | Datasets | Results and logs |
+| Area | Source code | Datasets | Execution results |
 | --- | --- | --- | --- |
 | Gurobi | [Gurobi/main.py](Gurobi/main.py), [Gurobi/main_no.py](Gurobi/main_no.py) | [Gurobi/dataset/](Gurobi/dataset/) | Module-local logs under [Gurobi/results/pre_processing/](Gurobi/results/pre_processing/) and [Gurobi/results/no_pre_processing/](Gurobi/results/no_pre_processing/) |
 | CPLEX CP | [CPLEX/CP/cp.py](CPLEX/CP/cp.py), [CPLEX/CP/cp_no.py](CPLEX/CP/cp_no.py) | [CPLEX/CP/dataset/](CPLEX/CP/dataset/) | Module-local logs under [CPLEX/CP/results/preprocessing/](CPLEX/CP/results/preprocessing/) and [CPLEX/CP/results/no_preprocessing/](CPLEX/CP/results/no_preprocessing/) |
@@ -30,7 +30,7 @@ python3.10 -m pip install --upgrade pip
 Install the common Python dependencies first:
 
 ```bash
-python3.10 -m pip install psutil python-sat
+python3.10 -m pip install psutil python-sat ortools
 ```
 
 Install solver-specific Python packages as needed:
@@ -45,13 +45,25 @@ python3.10 -m pip install docplex
 # CPLEX MIP
 # Install IBM CPLEX Optimization Studio, then install the matching Python API
 # from the CPLEX installation path for your platform.
+
+# Optional: plotting and result-processing scripts under visualize/
+python3.10 -m pip install matplotlib numpy pandas
 ```
 
 External solver requirements:
 
 - Gurobi requires a working Gurobi installation and license.
-- CPLEX CP and CPLEX MIP require IBM CPLEX Optimization Studio.
+- CPLEX CP requires IBM CPLEX Optimization Studio and the `docplex` Python package.
+- CPLEX MIP requires IBM CPLEX Optimization Studio and the matching `cplex` Python API.
+- CPSAT requires Google OR-Tools (`ortools`).
 - SAT, EvalMaxSAT, and MaxSAT-RC2 workflows use PySAT together with a supported SAT backend such as `cadical195` or `glucose4`.
+- The `visualize/` scripts require `matplotlib`, `numpy`, and `pandas`.
+
+If you want a single command for the shared pure-Python dependencies used by most scripts, install:
+
+```bash
+python3.10 -m pip install psutil python-sat ortools matplotlib numpy pandas
+```
 
 If you are on Linux, make the helper scripts executable once:
 
@@ -187,7 +199,7 @@ Supported instance families include:
 
 Each module reads from its local `dataset/` folder, which mirrors the shared contents in [Datasets/](Datasets/).
 
-The CALMA benchmark instances documented by the source page at [FAP CALMA](https://fap.zib.de/problems/#CALMA) come from the EUCLID CALMA project. The page describes two main benchmark families: 11 CELAR instances, 14 GRAPH instances and 10 DUTest instances, covering minimum order, minimum span, and minimum interference variants.
+The CALMA benchmark instances documented by the source page at [FAP CALMA](https://fap.zib.de/problems/#CALMA) come from the EUCLID CALMA project. The page describes two main benchmark families: 11 CELAR instances, 14 GRAPH instances and 10 DUTtest1 instances, covering minimum order, minimum span, and minimum interference variants.
 
 Each CALMA instance is distributed in four text files:
 
@@ -200,7 +212,7 @@ The CALMA page also notes that the instances contain distance and equality const
 
 ## Results And Logs
 
-The runnable scripts write logs into module-local `results/` directories. The top-level [Results/](Results/) tree contains consolidated example outputs from prior runs.
+The runnable scripts write execution outputs into module-local `results/` directories. The top-level [Results/](Results/) tree contains consolidated example outputs from prior runs.
 
 - `Gurobi/results/pre_processing/` and `Gurobi/results/no_pre_processing/` contain the Gurobi logs.
 - `CPLEX/CP/results/preprocessing/` and `CPLEX/CP/results/no_preprocessing/` contain the CPLEX CP logs.

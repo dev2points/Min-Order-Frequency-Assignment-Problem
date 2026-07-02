@@ -1,3 +1,0 @@
-Objective:If there is several solutions find that one which use the minimum
-number of values.
-If there is no solution minimize the violation of the constraints.
