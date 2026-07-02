@@ -10,19 +10,19 @@
 [runlim] argv[4]:		tot
 [runlim] argv[5]:		assumptions
 [runlim] argv[6]:		cadical195
-[runlim] start:			Sat Jun 20 00:18:42 2026
-[runlim] child:			38237
+[runlim] start:			Wed Mar 25 21:28:06 2026
+[runlim] child:			21931
 Warning: variable 302 has no valid labels after preprocessing.
 Cannot find solution!
-Time taken: 0.16 seconds
-Memory used: 21.26 MB
-[runlim] end:			Sat Jun 20 00:18:43 2026
+Time taken: 0.20 seconds
+Memory used: 18.37 MB
+[runlim] end:			Wed Mar 25 21:28:06 2026
 [runlim] status:		ok
 [runlim] result:		0
 [runlim] children:		1
 [runlim] processes:		2
-[runlim] real:			0.20 seconds
-[runlim] time:			0.10 seconds
-[runlim] space:			21 MB
-[runlim] load:			1.05 maximum
-[runlim] samples:		2
+[runlim] real:			0.24 seconds
+[runlim] time:			0.20 seconds
+[runlim] space:			18 MB
+[runlim] load:			1.10 maximum
+[runlim] samples:		3

@@ -10,19 +10,19 @@
 [runlim] argv[4]:		tot
 [runlim] argv[5]:		assumptions
 [runlim] argv[6]:		cadical195
-[runlim] start:			Sat Jun 20 00:34:39 2026
-[runlim] child:			38358
+[runlim] start:			Tue Mar 24 17:12:50 2026
+[runlim] child:			48035
 Solve first problem:
 Cannot find solution.
-Time taken: 0.17 seconds
-Memory used: 42.74 MB
-[runlim] end:			Sat Jun 20 00:34:39 2026
+Time taken: 0.20 seconds
+Memory used: 40.13 MB
+[runlim] end:			Tue Mar 24 17:12:50 2026
 [runlim] status:		ok
 [runlim] result:		0
 [runlim] children:		1
 [runlim] processes:		2
-[runlim] real:			0.22 seconds
+[runlim] real:			0.25 seconds
 [runlim] time:			0.20 seconds
-[runlim] space:			41 MB
-[runlim] load:			1.05 maximum
+[runlim] space:			40 MB
+[runlim] load:			1.02 maximum
 [runlim] samples:		3

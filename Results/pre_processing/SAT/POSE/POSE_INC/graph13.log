@@ -10,19 +10,19 @@
 [runlim] argv[4]:		tot
 [runlim] argv[5]:		assumptions
 [runlim] argv[6]:		cadical195
-[runlim] start:			Sat Jun 20 00:18:42 2026
-[runlim] child:			38228
+[runlim] start:			Wed Mar 25 21:28:05 2026
+[runlim] child:			21922
 Warning: variable 777 has no valid labels after preprocessing.
 Cannot find solution!
-Time taken: 0.19 seconds
-Memory used: 21.83 MB
-[runlim] end:			Sat Jun 20 00:18:42 2026
+Time taken: 0.24 seconds
+Memory used: 18.83 MB
+[runlim] end:			Wed Mar 25 21:28:05 2026
 [runlim] status:		ok
 [runlim] result:		0
 [runlim] children:		1
 [runlim] processes:		2
-[runlim] real:			0.23 seconds
+[runlim] real:			0.28 seconds
 [runlim] time:			0.20 seconds
-[runlim] space:			22 MB
-[runlim] load:			1.05 maximum
+[runlim] space:			19 MB
+[runlim] load:			1.10 maximum
 [runlim] samples:		3
