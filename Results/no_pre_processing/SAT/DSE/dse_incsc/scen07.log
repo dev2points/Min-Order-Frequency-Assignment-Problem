@@ -7,32 +7,20 @@
 [runlim] argv[1]:		-u
 [runlim] argv[2]:		pairwise_no_preprocessing.py
 [runlim] argv[3]:		scen07
-[runlim] argv[4]:		nsc
-[runlim] argv[5]:		assumptions
-[runlim] argv[6]:		cadical195
-[runlim] start:			Sat Jun 27 01:33:47 2026
-[runlim] child:			17227
-Exactly-one cardinality encoding:  1
-Distance constraint mode:  pairwise
-Distance cardinality encoding:  1
-Objective strategy:  nsc
-SAT type:  assumptions
-Solver:  cadical195
-Number of assignment variables:  15952
-Number of clauses for exactly one constraints:  314936
-Number of clauses for distance constraints:  1817916
----------------------------------------------------
+[runlim] argv[4]:		assumptions
+[runlim] start:			Tue Mar 24 01:39:10 2026
+[runlim] child:			17248
 Solve first problem:
 Cannot find solution.
-Time taken: 1.61 seconds 
-Memory used: 231.74 MB
-[runlim] end:			Sat Jun 27 01:33:48 2026
+Time taken: 1.88 seconds 
+Memory used: 229.11 MB
+[runlim] end:			Tue Mar 24 01:39:11 2026
 [runlim] status:		ok
 [runlim] result:		0
 [runlim] children:		1
 [runlim] processes:		2
-[runlim] real:			1.72 seconds
-[runlim] time:			1.70 seconds
-[runlim] space:			231 MB
+[runlim] real:			1.98 seconds
+[runlim] time:			1.89 seconds
+[runlim] space:			229 MB
 [runlim] load:			1.00 maximum
-[runlim] samples:		18
+[runlim] samples:		20

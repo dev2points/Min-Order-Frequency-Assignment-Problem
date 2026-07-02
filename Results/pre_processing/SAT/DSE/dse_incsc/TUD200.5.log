@@ -7,28 +7,20 @@
 [runlim] argv[1]:		-u
 [runlim] argv[2]:		pairwise.py
 [runlim] argv[3]:		TUD200.5
-[runlim] argv[4]:		nsc
-[runlim] argv[5]:		assumptions
-[runlim] argv[6]:		cadical195
-[runlim] start:			Sat Jun 27 03:11:04 2026
-[runlim] child:			18234
-Exactly-one cardinality encoding:  1
-Distance constraint mode:  pairwise
-Distance cardinality encoding:  1
-Objective strategy:  nsc
-SAT type:  assumptions
-Solver:  cadical195
-Warning: variable 163 has no valid labels after preprocessing.
-Cannot find solution!
-Time taken: 0.04 seconds
-Memory used: 20.32 MB
-[runlim] end:			Sat Jun 27 03:11:04 2026
+[runlim] argv[4]:		assumptions
+[runlim] start:			Thu Mar 26 02:28:20 2026
+[runlim] child:			31232
+Solve first problem:
+Cannot find solution.
+Time taken: 0.29 seconds 
+Memory used: 38.62 MB
+[runlim] end:			Thu Mar 26 02:28:20 2026
 [runlim] status:		ok
 [runlim] result:		0
-[runlim] children:		0
-[runlim] processes:		0
-[runlim] real:			0.08 seconds
-[runlim] time:			0.00 seconds
-[runlim] space:			0 MB
-[runlim] load:			1.02 maximum
-[runlim] samples:		1
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			0.34 seconds
+[runlim] time:			0.30 seconds
+[runlim] space:			38 MB
+[runlim] load:			1.05 maximum
+[runlim] samples:		4
