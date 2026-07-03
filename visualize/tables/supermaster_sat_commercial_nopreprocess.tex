@@ -1,0 +1,59 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Comprehensive comparison of SAT configurations and commercial solvers without domain preprocessing.}
+\label{tab:supermaster_sat_commercial_nopreprocess}
+\setlength{\tabcolsep}{2.2pt}
+\renewcommand{\arraystretch}{1.05}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc@{}}
+\toprule
+\textbf{Inst.} & \multicolumn{3}{c}{\textbf{POSE+INC}} & \multicolumn{3}{c}{\textbf{POSE+INCSC}} & \multicolumn{3}{c}{\textbf{POSE+MaxSAT-RC2}} & \multicolumn{3}{c}{\textbf{DSE+INC}} & \multicolumn{3}{c}{\textbf{DSE+INCSC}} & \multicolumn{3}{c}{\textbf{DSE+MaxSAT-RC2}} & \multicolumn{3}{c}{\textbf{CARD-Seq+INC}} & \multicolumn{3}{c}{\textbf{CARD-Seq+INCSC}} & \multicolumn{3}{c}{\textbf{CARD-Seq+MaxSAT-RC2}} & \multicolumn{3}{c}{\textbf{Gurobi}} & \multicolumn{3}{c}{\textbf{CPLEX/MIP}} & \multicolumn{3}{c}{\textbf{CPLEX/CP}} & \multicolumn{3}{c}{\textbf{CP-SAT}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13} \cmidrule(lr){14-16} \cmidrule(lr){17-19} \cmidrule(lr){20-22} \cmidrule(lr){23-25} \cmidrule(lr){26-28} \cmidrule(lr){29-31} \cmidrule(lr){32-34} \cmidrule(lr){35-37} \cmidrule(lr){38-40}
+ & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} \\
+\midrule
+C01 & 16 & 220.25 & OPT & 16 & \textbf{116.64} & OPT & 16 & 536.40 & OPT & 16 & 600.00 & TO & 16 & 600.00 & TO & - & 600.00 & TO & 16 & 600.00 & TO & 16 & 600.00 & TO & - & 600.00 & TO & 20 & 600.00 & TO & 24 & 600.00 & TO & 16 & 600.00 & TO & 16 & 600.00 & TO \\
+C02 & 14 & 13.88 & OPT & 14 & 16.25 & OPT & 14 & 29.21 & OPT & 14 & 600.00 & TO & 14 & 600.00 & TO & - & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO & - & 600.00 & TO & 14 & \textbf{6.85} & OPT & 14 & 600.00 & TO & 14 & 600.00 & TO & 14 & 10.75 & OPT \\
+C03 & 14 & 125.33 & OPT & 14 & \textbf{76.31} & OPT & 14 & 150.05 & OPT & 14 & 600.00 & TO & 14 & 600.00 & TO & - & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO & - & 600.00 & TO & 16 & 600.00 & TO & 18 & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO \\
+C04 & 46 & 0.18 & OPT & 46 & 0.28 & OPT & 46 & 3.36 & OPT & 46 & 0.72 & OPT & 46 & 0.85 & OPT & 46 & 2.84 & OPT & 46 & 1.96 & OPT & 46 & 2.01 & OPT & 46 & 82.26 & OPT & 46 & 5.45 & OPT & 46 & 3.45 & OPT & 46 & \textbf{0.16} & OPT & 46 & 5.33 & OPT \\
+C05 & 40 & \textbf{0.31} & OPT & 40 & 0.44 & OPT & 36 & 3.52 & OPT & 40 & 2.00 & OPT & 40 & 2.58 & OPT & 40 & 4.64 & OPT & 40 & 19.98 & OPT & 40 & 20.28 & OPT & 40 & 192.93 & OPT & 40 & 13.78 & OPT & 40 & 25.92 & OPT & 40 & 0.35 & OPT & 40 & 18.07 & OPT \\
+C06 & - & 0.13 & INF & - & 0.23 & INF & - & 0.17 & INF & - & 0.78 & INF & - & 0.88 & INF & - & 1.26 & INF & - & 2.42 & INF & - & 2.41 & INF & - & 4.37 & INF & - & 7.31 & INF & - & 10.84 & INF & - & \textbf{0.06} & INF & - & 7.63 & INF \\
+C07 & - & 0.28 & INF & - & 0.46 & INF & - & 0.33 & INF & - & 1.66 & INF & - & 1.88 & INF & - & 2.68 & INF & - & 4.98 & INF & - & 5.01 & INF & - & 8.37 & INF & - & 14.60 & INF & - & 29.83 & INF & - & \textbf{0.10} & INF & - & 13.55 & INF \\
+C08 & - & 0.56 & INF & - & 0.90 & INF & - & 0.71 & INF & - & 3.15 & INF & - & 3.58 & INF & - & 5.36 & INF & - & 9.07 & INF & - & 9.15 & INF & - & 14.92 & INF & - & 29.29 & INF & - & 50.63 & INF & - & \textbf{0.20} & INF & - & 25.31 & INF \\
+C09 & - & \textbf{0.04} & INF & - & 0.07 & INF & - & 0.05 & INF & - & 0.11 & INF & - & 0.13 & INF & - & 0.18 & INF & - & 0.22 & INF & - & 0.21 & INF & - & 0.34 & INF & - & 0.65 & INF & - & 0.30 & INF & - & 0.12 & INF & - & 0.43 & INF \\
+C10 & - & \textbf{0.04} & INF & - & 0.06 & INF & - & 0.05 & INF & - & 0.11 & INF & - & 0.13 & INF & - & 0.19 & INF & - & 0.21 & INF & - & 0.21 & INF & - & 0.34 & INF & - & 0.62 & INF & - & 0.31 & INF & - & 0.12 & INF & - & 0.44 & INF \\
+C11 & 22 & \textbf{16.31} & OPT & 22 & 32.00 & OPT & 22 & 71.15 & OPT & 22 & 600.00 & TO & 22 & 600.00 & TO & - & 600.00 & TO & 22 & 600.00 & TO & 22 & 600.00 & TO & - & 600.00 & TO & 22 & 196.02 & OPT & 32 & 600.00 & TO & 22 & 600.00 & TO & 22 & 600.00 & TO \\
+G01 & 18 & 155.71 & OPT & 18 & 84.35 & OPT & 18 & 420.99 & OPT & 18 & 600.00 & TO & 18 & 600.00 & TO & - & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO & - & 600.00 & TO & 18 & 4.97 & OPT & 18 & 2.02 & OPT & 18 & 600.00 & TO & 18 & \textbf{1.65} & OPT \\
+G02 & 14 & 16.89 & OPT & 14 & \textbf{13.35} & OPT & 14 & 71.61 & OPT & 14 & 600.00 & TO & 14 & 600.00 & TO & - & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO & - & 600.00 & TO & 14 & 43.95 & OPT & 14 & 15.70 & OPT & 14 & 600.00 & TO & 14 & 53.50 & OPT \\
+G03 & 20 & \textbf{4.49} & OPT & 20 & 6.40 & OPT & 20 & 10.59 & OPT & 20 & 18.68 & OPT & 20 & 28.51 & OPT & 20 & 26.34 & OPT & 20 & 64.43 & OPT & 20 & 74.13 & OPT & 20 & 100.35 & OPT & 20 & 600.00 & TO & 38 & 600.00 & TO & 20 & 120.02 & OPT & 20 & 29.60 & OPT \\
+G04 & 22 & \textbf{10.05} & OPT & 22 & 14.76 & OPT & 22 & 43.16 & OPT & 22 & 47.26 & OPT & 22 & 59.09 & OPT & 22 & 59.25 & OPT & 22 & 139.82 & OPT & 22 & 145.60 & OPT & 22 & 245.30 & OPT & 44 & 600.00 & TO & - & 600.00 & TO & 22 & 270.27 & OPT & 22 & 58.40 & OPT \\
+G05 & - & 0.10 & INF & - & 0.17 & INF & - & 0.12 & INF & - & 0.50 & INF & - & 0.61 & INF & - & 0.84 & INF & - & 1.45 & INF & - & 1.44 & INF & - & 2.30 & INF & - & 4.66 & INF & - & 8.25 & INF & - & \textbf{0.05} & INF & - & 4.00 & INF \\
+G06 & - & 0.20 & INF & - & 0.34 & INF & - & 0.25 & INF & - & 1.03 & INF & - & 1.19 & INF & - & 1.81 & INF & - & 3.05 & INF & - & 3.00 & INF & - & 4.73 & INF & - & 7.65 & INF & - & 4.25 & INF & - & \textbf{0.09} & INF & - & 7.22 & INF \\
+G07 & - & 0.04 & INF & - & 0.06 & INF & - & \textbf{0.00} & INF & - & \textbf{0.00} & INF & - & 0.12 & INF & - & \textbf{0.00} & INF & - & \textbf{0.00} & INF & - & 0.20 & INF & - & \textbf{0.00} & INF & - & 0.64 & INF & - & 0.29 & INF & - & 0.07 & INF & - & \textbf{0.00} & INF \\
+G08 & 18 & 103.01 & OPT & 18 & \textbf{19.27} & OPT & 18 & 187.70 & OPT & 18 & 600.00 & TO & 18 & 600.00 & TO & - & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO & - & 600.00 & TO & 18 & 236.65 & OPT & 22 & 600.00 & TO & 18 & 600.00 & TO & 18 & 78.14 & OPT \\
+G09 & 18 & 283.89 & OPT & 18 & \textbf{66.77} & OPT & 18 & 345.52 & OPT & 18 & 600.00 & TO & 18 & 600.00 & TO & - & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO & - & 600.00 & TO & 26 & 600.00 & TO & 28 & 600.00 & TO & 18 & 600.00 & TO & 18 & 74.26 & OPT \\
+G10 & 22 & 46.36 & OPT & 22 & \textbf{40.00} & OPT & 22 & 59.82 & OPT & 22 & 290.12 & OPT & 22 & 600.00 & TO & 22 & 386.75 & OPT & 22 & 600.00 & TO & 22 & 600.00 & TO & - & 600.00 & TO & - & 600.00 & TO & - & 600.00 & TO & 22 & 600.00 & TO & 22 & 349.25 & OPT \\
+G11 & - & 0.33 & INF & - & 0.61 & INF & - & 0.44 & INF & - & 1.81 & INF & - & 2.13 & INF & - & 3.04 & INF & - & 5.06 & INF & - & 4.97 & INF & - & 8.49 & INF & - & 13.61 & INF & - & 7.03 & INF & - & \textbf{0.13} & INF & - & 12.96 & INF \\
+G12 & - & \textbf{0.07} & INF & - & 0.10 & INF & - & 0.08 & INF & - & 0.21 & INF & - & 0.24 & INF & - & 0.33 & INF & - & 0.40 & INF & - & 0.40 & INF & - & 0.71 & INF & - & 1.25 & INF & - & 0.64 & INF & - & 0.12 & INF & - & 0.91 & INF \\
+G13 & - & 0.50 & INF & - & 0.82 & INF & - & 0.64 & INF & - & 2.76 & INF & - & 3.21 & INF & - & 4.54 & INF & - & 7.62 & INF & - & 7.47 & INF & - & 12.86 & INF & - & 18.70 & INF & - & 10.66 & INF & - & \textbf{0.19} & INF & - & 18.18 & INF \\
+G14 & 8 & \textbf{8.34} & OPT & 8 & 10.75 & OPT & 8 & 19.90 & OPT & 8 & 27.23 & OPT & 8 & 103.06 & OPT & 8 & 16.46 & OPT & 8 & 33.76 & OPT & 8 & 36.68 & OPT & 8 & 128.15 & OPT & 8 & 468.48 & OPT & 16 & 600.00 & TO & 10 & 600.00 & TO & 8 & 43.13 & OPT \\
+T2.1 & 12 & 2.71 & OPT & 12 & \textbf{2.30} & OPT & 12 & 3.14 & OPT & 12 & 16.81 & OPT & 12 & 104.14 & OPT & 12 & 45.29 & OPT & 12 & 48.48 & OPT & 12 & 38.37 & OPT & 12 & 48.00 & OPT & 12 & 8.77 & OPT & 12 & 12.42 & OPT & 12 & 600.00 & TO & 12 & 8.11 & OPT \\
+T2.2 & 46 & 0.11 & OPT & 46 & 0.19 & OPT & 46 & 0.88 & OPT & 46 & 0.65 & OPT & 46 & 0.75 & OPT & 46 & 1.47 & OPT & 46 & 2.06 & OPT & 46 & 1.93 & OPT & 46 & 41.55 & OPT & 46 & 4.96 & OPT & 46 & 2.88 & OPT & 46 & \textbf{0.06} & OPT & 46 & 5.27 & OPT \\
+T2.3 & 14 & \textbf{1.54} & OPT & 14 & 1.78 & OPT & 14 & 1.79 & OPT & 14 & 4.37 & OPT & 14 & 3.97 & OPT & 14 & 11.45 & OPT & 14 & 5.47 & OPT & 14 & 11.53 & OPT & 14 & 26.15 & OPT & 14 & 16.29 & OPT & 14 & 9.77 & OPT & 14 & 600.00 & TO & 14 & 5.24 & OPT \\
+T2.4 & 20 & 0.11 & OPT & 20 & 0.17 & OPT & 20 & 0.74 & OPT & 20 & 0.46 & OPT & 20 & 0.59 & OPT & 20 & 1.04 & OPT & 20 & 1.57 & OPT & 20 & 1.58 & OPT & 20 & 23.92 & OPT & 20 & 4.02 & OPT & 20 & 5.11 & OPT & 20 & \textbf{0.08} & OPT & 20 & 4.76 & OPT \\
+T2.5 & - & 0.12 & INF & - & 0.18 & INF & - & 0.13 & INF & - & 0.57 & INF & - & 0.68 & INF & - & 0.97 & INF & - & 1.67 & INF & - & 1.64 & INF & - & 2.67 & INF & - & 5.53 & INF & - & 8.99 & INF & - & \textbf{0.05} & INF & - & 4.45 & INF \\
+T9.1 & 18 & \textbf{9.79} & OPT & 18 & 14.02 & OPT & 18 & 23.25 & OPT & 18 & 72.51 & OPT & 18 & 54.40 & OPT & 18 & 69.10 & OPT & 18 & 46.19 & OPT & 18 & 58.05 & OPT & 18 & 584.90 & OPT & - & 600.00 & TO & 48 & 600.00 & TO & 24 & 600.00 & TO & 18 & 32.41 & OPT \\
+T9.2 & 48 & 0.50 & OPT & 48 & 0.78 & OPT & 48 & 15.38 & OPT & 48 & 2.80 & OPT & 48 & 3.11 & OPT & 48 & 12.02 & OPT & 48 & 9.05 & OPT & 48 & 8.02 & OPT & - & 600.00 & TO & 48 & 22.01 & OPT & 48 & 12.09 & OPT & 48 & \textbf{0.22} & OPT & 48 & 23.14 & OPT \\
+T9.3 & 24 & 3.54 & OPT & 24 & \textbf{3.21} & OPT & 20 & 23.39 & OPT & 24 & 13.41 & OPT & 24 & 9.17 & OPT & 24 & 33.85 & OPT & 24 & 21.07 & OPT & 24 & 21.82 & OPT & 24 & 235.11 & OPT & - & 600.00 & TO & 46 & 600.00 & TO & 24 & 43.17 & OPT & 24 & 19.88 & OPT \\
+T9.4 & 26 & 0.54 & OPT & 26 & 0.79 & OPT & 26 & 13.96 & OPT & 26 & 3.16 & OPT & 26 & 3.58 & OPT & 26 & 11.09 & OPT & 26 & 13.19 & OPT & 26 & 12.90 & OPT & 26 & 570.11 & OPT & 26 & 22.90 & OPT & 26 & 37.14 & OPT & 26 & \textbf{0.30} & OPT & 26 & 26.88 & OPT \\
+T9.5 & - & 0.48 & INF & - & 0.80 & INF & - & 0.63 & INF & - & 2.52 & INF & - & 2.87 & INF & - & 4.48 & INF & - & 7.09 & INF & - & 6.97 & INF & - & 11.58 & INF & - & 18.61 & INF & - & 9.96 & INF & - & \textbf{0.18} & INF & - & 17.04 & INF \\
+\midrule
+\textbf{Total Time} & - & 1026.73 & - & - & \textbf{525.61} & - & - & 2039.11 & - & - & 5315.39 & - & - & 5791.45 & - & - & 5507.27 & - & - & 5850.27 & - & - & 5875.98 & - & - & 8350.41 & - & - & 5978.22 & - & - & 7468.48 & - & - & 8236.11 & - & - & 2759.89 & - \\
+\#OPT & - & - & 22 & - & - & 22 & - & - & 22 & - & - & 14 & - & - & 13 & - & - & 14 & - & - & 13 & - & - & 13 & - & - & 12 & - & - & 14 & - & - & 10 & - & - & 9 & - & - & 19 \\
+\#INF & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 \\
+\#TO & - & - & 0 & - & - & 0 & - & - & 0 & - & - & 8 & - & - & 9 & - & - & 8 & - & - & 9 & - & - & 9 & - & - & 10 & - & - & 8 & - & - & 12 & - & - & 13 & - & - & 3 \\
+\bottomrule
+\multicolumn{40}{l}{\footnotesize \textbf{OPT}: optimal, \textbf{INF}: infeasible, \textbf{TO}: timeout under the 600-second limit.} \\
+\multicolumn{40}{l}{\footnotesize Time values are reported in seconds. Bold values indicate the fastest non-timeout method for each instance.}
+\end{tabular}%
+}
+\end{table*}

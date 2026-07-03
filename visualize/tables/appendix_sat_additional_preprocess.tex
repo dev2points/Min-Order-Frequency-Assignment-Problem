@@ -1,0 +1,60 @@
+﻿\begin{table*}[!htbp]
+\centering
+\caption{Additional comparison of MaxSAT solvers and CARD variants with domain preprocessing.}
+\label{tab:appendix_sat_additional_preprocess}
+\scriptsize
+\setlength{\tabcolsep}{4.0pt}
+\renewcommand{\arraystretch}{1.05}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l ccc ccc ccc ccc@{}}
+\toprule
+\textbf{Inst.} & \multicolumn{3}{c}{\textbf{POSE+EvalMaxSAT}} & \multicolumn{3}{c}{\textbf{CARD-Seq+INCSC}} & \multicolumn{3}{c}{\textbf{CARD-Totalizer+INCSC}} & \multicolumn{3}{c}{\textbf{CARD-CardNet+INCSC}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+ & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} \\
+\midrule
+C01 & - & 600.00 & TO & 16 & 600.00 & TO & 16 & 600.00 & TO & 16 & 600.00 & TO \\
+C02 & 14 & 78.75 & OPT & 14 & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO \\
+C03 & - & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO \\
+C04 & 46 & \textbf{0.00} & OPT & 46 & 0.08 & OPT & 46 & 0.10 & OPT & 46 & 0.09 & OPT \\
+C05 & 40 & \textbf{0.02} & OPT & 40 & 0.57 & OPT & 40 & 1.18 & OPT & 40 & 0.93 & OPT \\
+C06 & - & - & - & - & \textbf{0.18} & INF & - & \textbf{0.18} & INF & - & \textbf{0.18} & INF \\
+C07 & - & - & - & - & \textbf{0.16} & INF & - & \textbf{0.16} & INF & - & \textbf{0.16} & INF \\
+C08 & - & - & - & - & \textbf{0.22} & INF & - & \textbf{0.22} & INF & - & \textbf{0.22} & INF \\
+C09 & - & - & - & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF \\
+C10 & - & - & - & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF \\
+C11 & 22 & 77.12 & OPT & 22 & 600.00 & TO & 22 & 600.00 & TO & 22 & 600.00 & TO \\
+G01 & - & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO \\
+G02 & 14 & 120.86 & OPT & 14 & 600.00 & TO & 14 & 600.00 & TO & 14 & 600.00 & TO \\
+G03 & 20 & 52.19 & OPT & 20 & 56.14 & OPT & 20 & 118.41 & OPT & 20 & 64.51 & OPT \\
+G04 & 22 & 46.71 & OPT & 22 & 149.20 & OPT & 22 & 241.80 & OPT & 22 & 164.72 & OPT \\
+G05 & - & - & - & - & \textbf{0.03} & INF & - & \textbf{0.03} & INF & - & \textbf{0.03} & INF \\
+G06 & - & - & - & - & \textbf{0.07} & INF & - & \textbf{0.07} & INF & - & \textbf{0.07} & INF \\
+G07 & - & - & - & - & \textbf{0.00} & INF & - & \textbf{0.00} & INF & - & \textbf{0.00} & INF \\
+G08 & 18 & \textbf{142.31} & OPT & 18 & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO \\
+G09 & - & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO & 18 & 600.00 & TO \\
+G10 & 22 & \textbf{112.97} & OPT & 22 & 600.00 & TO & 22 & 600.00 & TO & 22 & 600.00 & TO \\
+G11 & - & - & - & - & \textbf{0.12} & INF & - & \textbf{0.12} & INF & - & \textbf{0.12} & INF \\
+G12 & - & - & - & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF \\
+G13 & - & - & - & - & \textbf{0.19} & INF & - & \textbf{0.19} & INF & - & \textbf{0.19} & INF \\
+G14 & 8 & 40.14 & OPT & 8 & 36.85 & OPT & 8 & 52.42 & OPT & 8 & 33.39 & OPT \\
+T2.1 & 12 & 14.42 & OPT & 12 & 37.41 & OPT & 12 & 29.43 & OPT & 12 & 46.56 & OPT \\
+T2.2 & 46 & \textbf{0.00} & OPT & 46 & 0.06 & OPT & 46 & 0.06 & OPT & 46 & 0.07 & OPT \\
+T2.3 & 14 & 10.61 & OPT & 14 & 4.98 & OPT & 14 & 8.20 & OPT & 14 & 8.01 & OPT \\
+T2.4 & 20 & \textbf{0.00} & OPT & 20 & 0.09 & OPT & 20 & 0.12 & OPT & 20 & 0.10 & OPT \\
+T2.5 & - & - & - & - & \textbf{0.04} & INF & - & \textbf{0.04} & INF & - & \textbf{0.04} & INF \\
+T9.1 & 18 & 37.00 & OPT & 18 & 76.92 & OPT & 18 & 110.03 & OPT & 18 & 67.73 & OPT \\
+T9.2 & 48 & \textbf{0.00} & OPT & 48 & 0.27 & OPT & 48 & 0.28 & OPT & 48 & 0.28 & OPT \\
+T9.3 & 24 & \textbf{20.61} & OPT & 24 & 22.14 & OPT & 24 & 51.12 & OPT & 24 & 30.80 & OPT \\
+T9.4 & 26 & \textbf{0.01} & OPT & 26 & 0.44 & OPT & 26 & 0.47 & OPT & 26 & 0.47 & OPT \\
+T9.5 & - & - & - & - & \textbf{0.14} & INF & - & 0.15 & INF & - & 0.15 & INF \\
+\midrule
+\textbf{Total Time} & - & 3153.72 & - & - & 5786.33 & - & - & 6014.81 & - & - & 5818.85 & - \\
+\#OPT & - & - & 18 & - & - & 13 & - & - & 13 & - & - & 13 \\
+\#INF & - & - & 0 & - & - & 13 & - & - & 13 & - & - & 13 \\
+\#TO & - & - & 4 & - & - & 9 & - & - & 9 & - & - & 9 \\
+\bottomrule
+\multicolumn{13}{l}{\footnotesize \textbf{OPT}: optimal, \textbf{INF}: infeasible, \textbf{TO}: timeout under the 600-second limit.} \\
+\multicolumn{13}{l}{\footnotesize Time values are reported in seconds. Bold values indicate the fastest non-timeout method for each instance.}
+\end{tabular}%
+}
+\end{table*}

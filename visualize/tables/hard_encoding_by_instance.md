@@ -1,0 +1,39 @@
+# Hard Encoding By Instance
+
+| dataset | CARD 1:1_vars | CARD 1:1_clauses | DSE_vars | DSE_clauses | POSE_vars | POSE_clauses |
+| --- | --- | --- | --- | --- | --- | --- |
+| TUD200.1 | 173,596 | 493,586 | 7,986 | 339,265 | 15,972 | 78,025 |
+| TUD200.2 | 200 | 300 | 200 | 300 | 400 | 1,286 |
+| TUD200.3 | 153,407 | 433,731 | 7,066 | 288,705 | 14,132 | 66,557 |
+| TUD200.4 | 5,275 | 13,974 | 624 | 9,049 | 1,248 | 4,050 |
+| TUD200.5 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| TUD916.1 | 705,399 | 2,000,264 | 33,572 | 1,380,601 | 67,144 | 306,313 |
+| TUD916.2 | 1,454 | 2,312 | 1,180 | 2,490 | 2,360 | 7,147 |
+| TUD916.3 | 756,304 | 2,144,292 | 34,386 | 1,443,466 | 68,772 | 329,553 |
+| TUD916.4 | 9,100 | 20,280 | 2,886 | 15,888 | 5,772 | 16,813 |
+| TUD916.5 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph01 | 71,739 | 196,572 | 6,920 | 206,786 | 13,840 | 62,950 |
+| graph02 | 172,559 | 478,208 | 14,624 | 475,829 | 29,248 | 139,391 |
+| graph03 | 463,875 | 1,341,243 | 7,480 | 598,543 | 14,960 | 71,704 |
+| graph04 | 904,601 | 2,615,266 | 14,816 | 1,168,001 | 29,632 | 140,881 |
+| graph05 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph06 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph07 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph08 | 389,284 | 1,079,747 | 25,628 | 906,033 | 51,256 | 236,932 |
+| graph09 | 573,735 | 1,599,202 | 36,092 | 1,299,985 | 72,184 | 352,970 |
+| graph10 | 1,781,951 | 5,163,511 | 26,594 | 2,273,085 | 53,188 | 256,868 |
+| graph11 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph12 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph13 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| graph14 | 462,509 | 1,269,682 | 36,716 | 1,204,487 | 73,432 | 334,704 |
+| scen01 | 692,321 | 1,982,888 | 36,200 | 1,446,348 | 72,400 | 355,326 |
+| scen02 | 181,777 | 522,669 | 8,004 | 349,519 | 16,008 | 82,133 |
+| scen03 | 362,247 | 1,047,531 | 15,892 | 702,647 | 31,784 | 173,390 |
+| scen04 | 5,783 | 12,729 | 1,960 | 10,472 | 3,920 | 11,930 |
+| scen05 | 73,726 | 205,588 | 3,722 | 107,224 | 7,444 | 26,565 |
+| scen06 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| scen07 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| scen08 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| scen09 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| scen10 | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible | preprocess_infeasible |
+| scen11 | 548,487 | 1,573,495 | 26,856 | 1,105,353 | 53,712 | 268,996 |

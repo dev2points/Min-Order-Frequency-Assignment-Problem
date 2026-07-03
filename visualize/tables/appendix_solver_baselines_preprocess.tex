@@ -1,0 +1,61 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Detailed comparison of POSE+INCSC, BKS values, and exact solver baselines with domain preprocessing.}
+\label{tab:appendix_solver_baselines_preprocess}
+\scriptsize
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.05}
+\resizebox{0.7\textwidth}{!}{%
+\begin{tabular}{@{}l c ccc ccc ccc ccc ccc@{}}
+\toprule
+\textbf{Inst.} & \textbf{BKS} & \multicolumn{3}{c}{\textbf{POSE+INCSC}} & \multicolumn{3}{c}{\textbf{Gurobi}} & \multicolumn{3}{c}{\textbf{CPLEX/MIP}} & \multicolumn{3}{c}{\textbf{CPLEX/CP}} & \multicolumn{3}{c}{\textbf{CP-SAT}} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14} \cmidrule(lr){15-17}
+ &  & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} & \textbf{Sol.} & \textbf{Time} & \textbf{Status} \\
+\midrule
+C01 & 16 & 16 & \textbf{119.14} & OPT & 20 & 600 & TO & 24 & 600 & TO & 16 & 600 & TO & 16 & 600 & TO \\
+C02 & 14 & 14 & 9.78 & OPT & 14 & \textbf{7.39} & OPT & 14 & 600 & TO & 14 & 600 & TO & 14 & 10.70 & OPT \\
+C03 & 14 & 14 & \textbf{65.31} & OPT & 16 & 600 & TO & 18 & 600 & TO & 14 & 600 & TO & 14 & 600 & TO \\
+C04 & 46 & 46 & \textbf{0.10} & OPT & 46 & 0.16 & OPT & 46 & 0.12 & OPT & 46 & 0.22 & OPT & 46 & 0.19 & OPT \\
+C05 & 40 & 40 & \textbf{0.40} & OPT & 40 & 1.37 & OPT & 40 & 1.10 & OPT & 40 & 0.73 & OPT & 40 & 1.49 & OPT \\
+C06 & - & - & \textbf{0.22} & INF & - & 0.24 & INF & - & 0.23 & INF & - & 0.24 & INF & - & 0.25 & INF \\
+C07 & - & - & \textbf{0.19} & INF & - & 0.20 & INF & - & 0.20 & INF & - & 0.20 & INF & - & 0.21 & INF \\
+C08 & - & - & \textbf{0.27} & INF & - & 0.28 & INF & - & \textbf{0.27} & INF & - & 0.28 & INF & - & 0.29 & INF \\
+C09 & - & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF \\
+C10 & - & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF \\
+C11 & 22 & 22 & \textbf{16.49} & OPT & 22 & 198.57 & OPT & 32 & 600 & TO & 22 & 600 & TO & 22 & 252 & OPT \\
+G01 & 18 & 18 & 66.73 & OPT & 18 & 5.68 & OPT & 18 & 2.19 & OPT & 18 & 600 & TO & 18 & \textbf{1.68} & OPT \\
+G02 & 14 & 14 & \textbf{14.96} & OPT & 14 & 44.70 & OPT & 14 & 15.97 & OPT & 14 & 600 & TO & 14 & 30.86 & OPT \\
+G03 & 20 & 20 & \textbf{5.90} & OPT & 22 & 600 & TO & 32 & 600 & TO & 20 & 89.41 & OPT & 20 & 27.21 & OPT \\
+G04 & 22 & 22 & \textbf{12.21} & OPT & 44 & 600 & TO & - & 600 & TO & 22 & 315.61 & OPT & 22 & 59.21 & OPT \\
+G05 & - & - & \textbf{0.04} & INF & - & \textbf{0.04} & INF & - & \textbf{0.04} & INF & - & \textbf{0.04} & INF & - & \textbf{0.04} & INF \\
+G06 & - & - & \textbf{0.09} & INF & - & \textbf{0.09} & INF & - & \textbf{0.09} & INF & - & 0.10 & INF & - & 0.10 & INF \\
+G07 & - & - & 0.01 & INF & - & \textbf{0.0003} & INF & - & \textbf{0.0003} & INF & - & \textbf{0.0003} & INF & - & \textbf{0.0003} & INF \\
+G08 & 18 & 18 & \textbf{38.64} & OPT & 18 & 240.57 & OPT & 22 & 600 & TO & 18 & 600 & TO & 18 & 96.06 & OPT \\
+G09 & 18 & 18 & 159.46 & OPT & 26 & 600 & TO & 28 & 600 & TO & 18 & 600 & TO & 18 & \textbf{55.91} & OPT \\
+G10 & 22 & 22 & \textbf{60.55} & OPT & - & 600 & TO & - & 600 & TO & 22 & 600 & TO & 22 & 386.77 & OPT \\
+G11 & - & - & \textbf{0.15} & INF & - & \textbf{0.15} & INF & - & 0.16 & INF & - & \textbf{0.15} & INF & - & 0.17 & INF \\
+G12 & - & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF & - & \textbf{0.01} & INF \\
+G13 & - & - & \textbf{0.24} & INF & - & \textbf{0.24} & INF & - & \textbf{0.24} & INF & - & 0.25 & INF & - & 0.26 & INF \\
+G14 & 8 & 8 & \textbf{8.64} & OPT & 8 & 456.71 & OPT & 16 & 600 & TO & 10 & 600 & TO & 8 & 32.92 & OPT \\
+T2.1 & 12 & 12 & \textbf{2.74} & OPT & 12 & 14.22 & OPT & 12 & 12.34 & OPT & 12 & 600 & TO & 12 & 12.38 & OPT \\
+T2.2 & 46 & 46 & \textbf{0.08} & OPT & 46 & 0.09 & OPT & 46 & 0.09 & OPT & 46 & 0.12 & OPT & 46 & 0.10 & OPT \\
+T2.3 & 14 & 14 & \textbf{1.13} & OPT & 14 & 15.13 & OPT & 14 & 345.36 & OPT & 14 & 455.48 & OPT & 14 & 6 & OPT \\
+T2.4 & 20 & 20 & \textbf{0.09} & OPT & 20 & 0.20 & OPT & 20 & 0.16 & OPT & 20 & 0.16 & OPT & 20 & 0.19 & OPT \\
+T2.5 & - & - & \textbf{0.05} & INF & - & \textbf{0.05} & INF & - & \textbf{0.05} & INF & - & \textbf{0.05} & INF & - & \textbf{0.05} & INF \\
+T9.1 & 18 & 18 & \textbf{10.87} & OPT & - & 600 & TO & 46 & 600 & TO & 22 & 600 & TO & 18 & 34.52 & OPT \\
+T9.2 & 48 & 48 & \textbf{0.34} & OPT & 48 & 0.37 & OPT & 48 & 0.35 & OPT & 48 & 0.48 & OPT & 48 & 0.40 & OPT \\
+T9.3 & 24 & 24 & \textbf{4.40} & OPT & - & 600 & TO & 46 & 600 & TO & 24 & 35.65 & OPT & 24 & 18.09 & OPT \\
+T9.4 & 26 & 26 & \textbf{0.51} & OPT & 26 & 0.73 & OPT & 26 & 0.62 & OPT & 26 & 0.79 & OPT & 26 & 0.69 & OPT \\
+T9.5 & - & - & \textbf{0.18} & INF & - & 0.19 & INF & - & 0.19 & INF & - & 0.19 & INF & - & 0.19 & INF \\
+\midrule
+\textbf{Total Time} & - & - & \textbf{599.94} & - & - & 5787.40 & - & - & 7579.80 & - & - & 8100.18 & - & - & 2228.96 & - \\
+\#OPT & - & - & - & 22 & - & - & 14 & - & - & 10 & - & - & 10 & - & - & 20 \\
+\#INF & - & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 & - & - & 13 \\
+\#TO & - & - & - & 0 & - & - & 8 & - & - & 12 & - & - & 12 & - & - & 2 \\
+\bottomrule
+\multicolumn{17}{l}{\footnotesize \textbf{BKS}: Best Known Solution value reported in~\cite{Gomez2023MO}.} \\
+\multicolumn{17}{l}{\footnotesize \textbf{OPT}: optimal, \textbf{INF}: infeasible, \textbf{TO}: timeout under the 600-second limit.} \\
+\multicolumn{17}{l}{\footnotesize Time values are reported in seconds. Bold values indicate the fastest non-timeout method for each instance.}
+\end{tabular}%
+}
+\end{table*}
